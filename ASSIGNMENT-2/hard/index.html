@@ -4,226 +4,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>hard</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main class="main">
-        <div class="page-shell">
-            <div class="winterDrop">2025 / winter drop</div>
+    <main>
+        <nav>
+            <div class="navLeft">
+                <h1>ASTRO</h1>
+                <ol>
+                    <li><a href="#">products</a></li>
+                    <li><a href="#">category</a></li>
+                    <li><a href="#">about_us</a></li>
+                    <li><a href="#">contact</a></li>
+                </ol>
+            </div>
+            <div class="icons">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <sapn>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#000">
+                        <path
+                            d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z" />
+                    </svg>
+                </sapn>
+                <sapn>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#000">
+                        <path
+                            d="M367-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q560-607 560-640t-23.5-56.5Q513-720 480-720t-56.5 23.5Q400-673 400-640t23.5 56.5Q447-560 480-560t56.5-23.5ZM480-640Zm0 400Z" />
+                    </svg>
+                </sapn>
+            </div>
+        </nav>
+        <hr>
 
-            <header class="topbar">
-                <div class="headerLeft">
-                    <h1>new collection</h1>
-
-                    <ol class="headerTags">
-                        <li>[ new collection ]</li>
-                        <li>[ limited drop ]</li>
-                        <li>[ winter 25 ]</li>
-                    </ol>
-
-                    <ol class="headerItems">
-                        <li>puffer jackets</li>
-                        <li>tech wear</li>
-                        <li>glossy silver</li>
-                        <li>stealth black</li>
-                    </ol>
+        <div class="content">
+            <div class="contentLeft">
+                <div class="titleContainer">
+                    <span>new</span>
+                    <h3>ASTRO WINTER ARMOR</h3>
+                    <div class="price">$560</div>
                 </div>
-
-                <button class="filter" type="button">
-                    <span>filters</span>
-                    <span class="filterIcon" aria-hidden="true"></span>
-                </button>
-            </header>
-
-            <section class="collectionGrid" aria-label="Winter collection products">
-                <article class="heroCard">
-                    <img src="./images/hero.png" alt="Aurora puffer jacket in icy blue">
-
-                    <div class="heroOverlay">
-                        <p class="heroTitle">aurora&trade;</p>
-                        <div class="heroAction">
-                            <button type="button" class="heroButton" aria-label="Open featured product"></button>
-                            <div>
-                                <span class="heroActionLabel">add to cart</span>
-                                <span class="heroPrice">$1,999</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="heroGraffiti">#fizz</div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualWhite">
-                        <img src="./images/image.png" alt="White puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>aurora silver</h2>
-                        <p>reflective puffer jacket</p>
-                        <div class="swatches">
-                            <span><i></i>white</span>
-                            <span><i></i>blue</span>
-                        </div>
-                        <strong>$1,999.99</strong>
-                    </div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualChrome">
-                        <img src="./images/image.png" alt="Silver holographic puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>orbit silver</h2>
-                        <p>holographic puffer</p>
-                        <div class="swatches">
-                            <span><i></i>silver</span>
-                        </div>
-                        <strong>$1,999.99</strong>
-                    </div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualBlack">
-                        <img src="./images/image.png" alt="Black heavy down puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>stealth black</h2>
-                        <p>heavy down puffer</p>
-                        <div class="swatches">
-                            <span><i></i>black</span>
-                            <span><i></i>white</span>
-                        </div>
-                        <strong>$1,199.99</strong>
-                    </div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualGray">
-                        <img src="./images/image.png" alt="Gray insulated puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>glacier white</h2>
-                        <p>insulated puffer jacket</p>
-                        <div class="swatches">
-                            <span><i></i>grey</span>
-                        </div>
-                        <strong>$1,299.99</strong>
-                    </div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualBlueGlow">
-                        <img src="./images/image.png" alt="Blue gloss puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>polar gloss</h2>
-                        <p>blue puffer jacket</p>
-                        <div class="swatches">
-                            <span><i></i>blue gloss</span>
-                        </div>
-                        <strong>$1,299.99</strong>
-                    </div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualMidnight">
-                        <img src="./images/image.png" alt="Midnight heavy puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>stealth black</h2>
-                        <p>heavy puffer jacket</p>
-                        <div class="swatches">
-                            <span><i></i>navy blue</span>
-                            <span><i></i>black</span>
-                        </div>
-                        <strong>$1,199.99</strong>
-                    </div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualBlue">
-                        <img src="./images/image.png" alt="Blue tech puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>deepfield blue</h2>
-                        <p>tech puffer jacket</p>
-                        <div class="swatches">
-                            <span><i></i>blue</span>
-                        </div>
-                        <strong>$1,299.99</strong>
-                    </div>
-                </article>
-
-                <article class="productCard">
-                    <div class="productVisual visualCream">
-                        <img src="./images/image.png" alt="Cream white puffer jacket variant">
-                    </div>
-                    <div class="productMeta">
-                        <h2>polar mist</h2>
-                        <p>white puffer jacket</p>
-                        <div class="swatches">
-                            <span><i></i>white</span>
-                        </div>
-                        <strong>$1,299.99</strong>
-                    </div>
-                </article>
-            </section>
-
-            <section class="featureStrip" aria-label="Product highlights">
-                <article>
-                    <span class="featureIcon">❄</span>
-                    <div>
-                        <h3>premium insulation</h3>
-                        <p>Built for extreme winter conditions.</p>
-                    </div>
-                </article>
-                <article>
-                    <span class="featureIcon">⌁</span>
-                    <div>
-                        <h3>water resistant</h3>
-                        <p>Advanced fabric technology.</p>
-                    </div>
-                </article>
-                <article>
-                    <span class="featureIcon">➹</span>
-                    <div>
-                        <h3>ultra lightweight</h3>
-                        <p>Maximum warmth, minimal weight.</p>
-                    </div>
-                </article>
-                <article>
-                    <span class="featureIcon">◫</span>
-                    <div>
-                        <h3>limited edition</h3>
-                        <p>Exclusive designs. Limited quantities.</p>
-                    </div>
-                </article>
-            </section>
-
-            <footer class="footerBar">
-                <div class="footerBrand">
-                    <span class="brandMark">⟡</span>
-                    <p>© 2025 aurora&trade;<br>all rights reserved</p>
+                <hr>
+                <div class="description">
+                    <div>description</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ea esse dolores architecto cum
+                        voluptas delectus laborum perspiciatis facilis neque eaque fugiat nisi explicabo deleniti
+                        placeat, necessitatibus expedita. Ducimus, eaque.</p>
+                    <button class="readMore">read More</button>
                 </div>
-
-                <nav class="footerNav" aria-label="Footer navigation">
-                    <a href="#">shop</a>
-                    <a href="#">collections</a>
-                    <a href="#">about</a>
-                    <a href="#">lookbook</a>
-                    <a href="#">contact</a>
-                </nav>
-
-                <div class="socialLinks" aria-label="Social links">
-                    <span>follow us</span>
-                    <a href="#" aria-label="Instagram">instagram</a>
-                    <a href="#" aria-label="Facebook">facebook</a>
-                    <a href="#" aria-label="Twitter">twitter</a>
+                <hr>
+                <div>
+                    <details>
+                        <summary>materrial & care</summary>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis eaque ratione odit!</p>
+                    </details>
+                    <details>
+                        <summary>shopping & return</summary>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis eaque ratione odit!</p>
+                    </details>
                 </div>
-            </footer>
+            </div>
+            <div class="contentCenter">
+                <img src="./images/hero.png" alt="jacket" class="realHeor">
+            </div>
+            <div class="contentRight">
+                <div class="sizeContainer">
+                    <p class="rightHeadLine">SIZE</p>
+                    <div>
+                        <span class="size">S</span>
+                        <span class="size">M</span>
+                        <span class="size">L</span>
+                        <span class="size">XL</span><br>
+                    </div>
+                    <button class="readMore">size guide</button>
+                </div>
+                <hr>
+                <div>
+                    <p class="rightHeadLine"> colors</p>
+                    <div class="color-grid">
+                        <div class="color-item">
+                            <img src="./images/hero.png" alt="color">
+                            <p>Beige</p>
+                        </div>
+                        <div class="color-item">
+                            <img src="./images/hero.png" alt="color">
+                            <p>Red</p>
+                        </div>
+                        <div class="color-item">
+                            <img src="./images/hero.png" alt="color">
+                            <p>Black</p>
+                        </div>
+                        <div class="color-item">
+                            <img src="./images/hero.png" alt="color">
+                            <p>White</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="button" class="btn outline">Add to wishlist</button>
+                    <button type="button" class="btn primary">Add to bag</button>
+                </div>
+            </div>
         </div>
+
+        <footer class="productFooter">
+            <div class="footerCards">
+                <article class="footerCard">
+                    <img src="./images/hoody.webp" alt="jacket detail">
+                    <div>
+                        <h4>3x water-repellent</h4>
+                        <p>The fabric repels rain, snow and moisture while keeping you dry and comfortable.</p>
+                    </div>
+                </article>
+                <article class="footerCard">
+                    <img src="./images/hoody.webp" alt="jacket puffed detail">
+                    <div>
+                        <h4>3D areas puffered</h4>
+                        <p>Strategically padded zones trap heat and maximize insulation without the bulk.</p>
+                    </div>
+                </article>
+                <article class="footerCard">
+                    <img src="./images/hoody.webp" alt="model wearing jacket">
+                    <div>
+                        <h4>insulation</h4>
+                        <p>Advanced thermal filling locks in warmth up to -30&deg;C for extreme conditions.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="footerHighlights">
+                <div class="highlightItem">
+                    <span></span>
+                    <div>
+                        <h5>premium fabrics</h5>
+                        <p>Durable, high-performance materials.</p>
+                    </div>
+                </div>
+                <div class="highlightItem">
+                    <span></span>
+                    <div>
+                        <h5>thermal protection</h5>
+                        <p>Built for extreme winter weather.</p>
+                    </div>
+                </div>
+                <div class="highlightItem">
+                    <span></span>
+                    <div>
+                        <h5>designed for function</h5>
+                        <p>Every detail serves a purpose.</p>
+                    </div>
+                </div>
+                <div class="highlightItem">
+                    <span></span>
+                    <div>
+                        <h5>limited edition</h5>
+                        <p>Exclusive drop with a refined finish.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
 </body>
 
