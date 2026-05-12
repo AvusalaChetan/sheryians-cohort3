@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    color: white;
+    background-image: url(./images/bg.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    overflow-x: hidden; /* FIX 10: prevent horizontal scroll from overflowing right image */
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    width: 100%;
+    height: 70px;
+}
+
+.logoDiv {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+.logoDiv img {
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    object-fit: cover;
+}
+
+nav {
+    padding: 0 10px;
+    margin-right: 40px;
+    min-width: 280px; /* FIX 8: prevents nav links from squishing on smaller screens */
+}
+
+nav ul {
+    list-style-type: none;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navicon {
+    text-align: center;
+    font-size: 20px;
+}
+
+main {
+    position: relative; /* FIX 5: makes .cardContainer position relative to <main> */
+    height: calc(100% - 70px); /* FIX 1: give main an explicit height so % children resolve */
+}
+
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    height: 90%; /* FIX 1: now works correctly since <main> has a defined height */
+    margin: auto;
+}
+
+aside {
+    width: 45%;
+    height: 80%;
+}
+
+/* FIX 2: removed .left width: 50% — .left IS the aside, so aside's 45% applies correctly */
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 80%;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.left .top img {
+    object-fit: cover;
+    width: 60%;
+    height: 80%;
+    margin: auto; /* FIX 7: removed dead `margin-left: 30px` before this — margin: auto is what applies */
+}
+
+.left p {
+    width: 60%;
+    color: rgb(160, 162, 162);
+}
+
+/* FIX 3 & 9: gave .right explicit dimensions, position:relative, and overflow:hidden */
+.right {
+    position: relative;
+    width: 45%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.right img {
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    position: absolute;
+    top: -80px;
+    left: -70px;
+}
+
+/* FIX 4: use align-self: flex-start instead of margin: auto for flex child alignment */
+.btn {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.btn button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    background: transparent;
+    color: white;
+}
+
+.btn button .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+}
+
+.btn .play {
+    background: linear-gradient(90deg, #d83a8a, #f08b2d);
+    box-shadow: 0 8px 20px rgba(208, 58, 138, 0.25);
+}
+
+.btn .play .icon {
+    background: white;
+    color: #d83a8a;
+}
+
+.btn .play:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(208, 58, 138, 0.28);
+}
+
+.btn .trailer {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 12px 26px;
+}
+
+.btn .trailer .icon {
+    background: transparent;
+    color: white;
+    width: 18px;
+    height: 18px;
+}
+
+.btn .trailer:hover {
+    border-color: #ff6b9a;
+    transform: translateY(-2px);
+}
+
+.middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    transform: rotate(90deg);
+    gap: 5px;
+    padding: 0 12px;
+}
+
+.middle hr {
+    width: 80px;
+}
+
+.cardContainer {
+    position: absolute; /* FIX 5: now correctly positions relative to <main> */
+    left: 15%;
+    bottom: 4%;
+    width: 70%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 10px;
+    background: rgba(102, 2, 102, 0.703);
+    margin: auto;
+    border-radius: 30px;
+}
+
+.cardContainer .card {
+    width: calc(100% / 3);
+    height: 100%;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 5%;
+}
+
+/* FIX 6: renamed from `.card span` to `.card .icon` to match HTML class and avoid collision with .btn .icon */
+.card .icon {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    border: 1px solid rgb(70, 69, 69);
+    border-radius: 50%;
+    padding: 7px;
+    background: #11101070;
+    /* override the btn .icon styles that would otherwise apply */
+    width: auto;
+    height: auto;
+    font-size: 14px;
+}
