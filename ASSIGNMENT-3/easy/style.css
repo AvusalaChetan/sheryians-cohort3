@@ -223,7 +223,7 @@ aside {
 }
 
 .cardContainer {
-    position: absolute; /* FIX 5: now correctly positions relative to <main> */
+    position: absolute;
     left: 15%;
     bottom: 4%;
     width: 70%;
@@ -251,7 +251,6 @@ aside {
     border-radius: 5%;
 }
 
-/* FIX 6: renamed from `.card span` to `.card .icon` to match HTML class and avoid collision with .btn .icon */
 .card .icon {
     position: absolute;
     bottom: 5px;
