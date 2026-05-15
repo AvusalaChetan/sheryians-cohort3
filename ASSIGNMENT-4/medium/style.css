@@ -1,33 +1,354 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html {
+  height: 100%;
+}
+
+html,
 body {
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;
-    background: #000;
-    color: #f7f4f4;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background: #373636;
+  color: #f7f4f4;
 }
-main{
-    height: 100%;
-    width: 100%;
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 20px;
+}
+
+.card {
+  background: #1b1b1be9;
+  box-shadow: inset 2px 2px 4px #2f2a2a;
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+.bage {
+  height: 30px;
+  width: 30px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-card {
+  padding: 0px;
+  overflow: hidden;
+}
+.image-card img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-container {
+  width: 100%;
+  height: 50%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.icon {
+  background: #0d0d0d52;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.container {
+  width: 950px;
+  height: 700px;
+  box-shadow: inset 2px 2px 4px #2f2a2a;
+  padding: 12px;
+  border: 2px solid rgb(22, 21, 21);
+  display: grid;
+  border-radius: 12px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1.5fr;
+  grid-template-areas:
+    "left_top    left_top       center2_top     center3_top     right_top"
+    "left_top    left_top       center2_top     center3_top     right_center1 "
+    "left_center center1_center center2_center   center2_center right_center1"
+    "left_center center1_center center2_center  center2_center  right_center2"
+    "left_bottom left_bottom     left_bottom    right_bottom    right_bottom";
+  gap: 12px;
+  background: #141414;
+}
+
+.left_top {
+  grid-area: left_top;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.left_top div:nth-child(1) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+
+.left_top div:nth-child(1) p span {
+  font-size: 10px;
+  color: gray;
+}
+
+.left_top div:nth-child(2) {
+  font-size: 25px;
+}
+
+.left_top div:nth-child(3) p {
+  font-size: 12px;
+  color: gray;
+}
+
+.left_center {
+  grid-area: left_center;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.left_bottom {
+  grid-area: left_bottom;
+  border-radius: 14px;
+  overflow: hidden;
     display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 30px;
+}
+
+.left_bottom img {
+  width: 140px;
+  height: auto;
+  display: block;
 
 }
 
-.container{
-    width: 80%;
-    height: 80%;
-    border: 1px solid white;
-display: grid;
-grid-template-columns:repeat(5, 1fr) ;
-grid-template-rows: repeat(5 ,1fr);
-grid-template-areas:
-""
-;
+.left_bottom div:first-child h4{
+font-size: 20px;
+margin-bottom: 12px;
+}
+.left_bottom div:first-child p{
+font-size: 12px;
+color: gray;
+}
+
+.left_bottom div:last-child {
+width: 37px;
+height: 37px;
+overflow: hidden;
+border-radius: 12px;
+border: 2px solid whitesmoke;
+}
+.left_bottom div:last-child img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.center1_center {
+  grid-area: center1_center;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+.center1_center > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.center1_center > div span {
+  color: gray;
+  text-transform: capitalize;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.center1_center > div p {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.center2_top {
+  grid-area: center2_top;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.center2_center {
+  grid-area: center2_center;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.center3_top {
+  grid-area: center3_top;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.right_top {
+  grid-area: right_top;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.right_center1 {
+  grid-area: right_center1;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+.right_center2 {
+  grid-area: right_center2;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 2px solid #414141;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: white;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 2px solid #414141;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  right: 0px;
+  bottom: 0.2em;
+  background-color: white;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+
+
+.right_bottom  {
+  grid-area: right_bottom;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+ 
+}
+
+.text{
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.say-hello , p{
+font-size: 12px;
+text-transform: capitalize;
+font-weight: normal;
+color: gray;
+}
+
+.right_bottom .subtitle{
+    font-family: serif;
+    
+}
+.arrow-btn{
+ position: absolute;
+ right: 10px ;
+ bottom: 10px;   
 }
