@@ -1,13 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <main>
-        x
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="center">
+      <div class="container">
+        <div class="left_center1 link card">
+          <p>cilents</p>
+        </div>
+        <div class="left_center2 link card">
+          <p>cilents</p>
+        </div>
+        <div class="left_center3 link card">
+          <p>cilents</p>
+        </div>
+        <div class="left_center4 link card">
+          <p>cilents</p>
+        </div>
+        <div class="left_bottom link card">
+          <p>cilents</p>
+        </div>
+        <!-- -------------------------------------------- -->
+
+        <svg width="100" height="100" style="position: absolute">
+          <defs>
+            <clipPath id="cardClip" clipPathUnits="objectBoundingBox">
+              <path
+                d="M 0.06 0.10 L 0.28 0.10 Q 0.30 0.10, 0.33 0.08 L 0.42 0.02 Q 0.45 0, 0.47 0 L 0.94 0 Q 1 0, 1 0.06 L 1 0.94 Q 1 1, 0.94 1 L 0.06 1 Q 0 1, 0 0.94 L 0 0.16 Q 0 0.10, 0.06 0.10 Z"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+        <div class="about-me">
+          <span><i class="ri-user-line"></i></span>
+          <p>about me</p>
+        </div>
+
+        <div class="center1 card">
+          <div class="ring center">
+            <div class="ring-bg center">
+              <div class="main-circle">
+                <img
+                  class=""
+                  src="data:image/jpeg;base64,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"
+                  alt="hero"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="nameContainer">
+            <h1>
+              <span style="font-weight: 100; color: rgb(255, 255, 255)" class=""
+                >Im,<br />
+              </span>
+              jon <br />danlel
+            </h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <hr style="color: black; background: #000" />
+            <div class="stamp image-card">
+              <img src="bage.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- -------------------------------------------- -->
+        <div class="center2_top blue card center">
+          <h1>
+            Portfolio<span><i class="ti-check"></i></span>
+          </h1>
+        </div>
+
+        <div class="center2_center1 yellow image-card card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSXJN5_f2tFPrSNmAJD_OJ-47mk-pdoul1RQ&s"
+            alt="flamigo "
+          />
+        </div>
+
+        <div class="center2_bottom gray card center">
+          <div class="app-icon">
+            <svg
+              width="98"
+              height="98"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M28.5 12c.2-1.5-1-3-2.5-3.5 -.2 1.6.8 3.1 2.5 3.5Z"
+                fill="#ffffff"
+              />
+              <path
+                d="M32 20c-1.5-1.8-3.5-2-4.3-2 -1.2 0-2.3.5-3.2.5 -.9 0-2.2-.5-3.5-.5 -2.5.1-5 2-5 5.8 0 4.5 3.5 10.2 5.5 10.2 .9 0 1.8-.6 3-.6 1.2 0 1.8.6 3 .6 2 0 5.2-5.2 5.5-7 -1.5-.7-2.5-2.3-2.5-4 0-1.5.8-3 1.5-3Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </div>
+          <p>Client</p>
+        </div>
+        <!-- -------------------------------------------- -->
+
+        <div class="right_center1  card ">
+          <div class="anand">
+            <h3>223</h3>
+            <p>project</p>
+          </div>
+          <div class="purple">
+            <h3>156</h3>
+            <p>project</p>
+          </div>
+        </div>
+
+        <div class="right_bottom card">
+          <div><img src="ball.png" alt="ball" /></div>
+          <div class="center ">
+            <h3>127</h3>
+            <p>Lorem, ipsum dolor.</p>
+          </div>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
