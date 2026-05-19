@@ -49,6 +49,15 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 12px;
+    display: flex;
+    gap: 4px;
+
+    p{
+        color:  rgb(206, 204, 204);;
+    }
+    .topic{
+        color:  rgb(113, 113, 113);;
+    }
 }
 
 .cards {
