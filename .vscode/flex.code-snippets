@@ -1,0 +1,14 @@
+{
+
+  "CSS Reset": {
+    "scope": "css",
+    "prefix": "center",
+    "body": [
+      "",
+      "    display: flex;",
+      "    align-items: center;",
+      "    justify-content: center;",
+    ],
+    "description": "CSS reset with body styles",
+  },
+}

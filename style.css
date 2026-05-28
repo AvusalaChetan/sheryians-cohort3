@@ -52,11 +52,14 @@ section {
     display: flex;
     gap: 4px;
 
-    p{
-        color:  rgb(206, 204, 204);;
+    p {
+        color: rgb(206, 204, 204);
+        
     }
-    .topic{
-        color:  rgb(113, 113, 113);;
+
+    .topic {
+        color: rgb(255, 255, 255);
+        
     }
 }
 
@@ -76,6 +79,11 @@ section {
     flex-direction: column;
     gap: 8px;
     transition: border-color 0.15s;
+}
+
+a.card {
+    color: inherit;
+    text-decoration: none;
 }
 
 .card:hover {
@@ -110,6 +118,7 @@ section {
 .general {
     background: #0d1e2e;
     color: #4a9edd;
+    text-transform: uppercase;
 }
 
 .card-title {
@@ -131,4 +140,9 @@ section {
 
 .card:hover .card-arrow {
     color: #888;
+}
+
+.dec{
+    color: #7a7a7a;
+    font-size: 13px;
 }
