@@ -62,7 +62,6 @@ section {
   width: 100%;
 }
 
-
 .free-ship {
   text-align: center;
   background: var(--navy);
@@ -78,7 +77,6 @@ section {
   width: 100%;
   z-index: 200;
 }
-
 
 nav {
   border: 1px solid #d0d0d0;
@@ -162,7 +160,9 @@ nav {
   height: 2px;
   background: #111;
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /* Hamburger → X when open */
@@ -268,7 +268,9 @@ h1 {
   border-radius: 30px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .mainBtn:hover {
@@ -339,7 +341,7 @@ h1 {
   border: 1.5px solid #111;
   letter-spacing: 2px;
   border-radius: 8px;
-  font-family: midNight;
+  font-family: "midNight";
   padding: 2px 10px;
   font-weight: 800;
   background: none;
@@ -498,7 +500,6 @@ h1 {
   font-size: 1rem;
 }
 
-
 .s3 {
   min-height: 100vh;
   display: flex;
@@ -534,7 +535,9 @@ h1 {
   font-family: "Reckless", serif;
   color: #aaa;
   outline: none;
-  transition: border-color 0.2s, color 0.2s;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .s3_top input:focus {
@@ -545,7 +548,6 @@ h1 {
 .Discover {
   background: orange;
   color: #111;
-
 }
 
 .s3_bottom>p {
@@ -573,15 +575,15 @@ h1 {
   border: 1px solid #111;
   font-weight: 300;
   text-transform: capitalize;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .vibeBtn:hover {
   background: var(--navy);
   color: white;
 }
-
-
 
 .s4 {
   min-height: 90vh;
@@ -608,7 +610,6 @@ h1 {
   width: clamp(80px, 14vw, 200px);
   height: clamp(80px, 14vw, 200px);
   border-radius: 50%;
-  
 }
 
 .bage img {
@@ -685,7 +686,9 @@ h1 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .services-btn:hover {
@@ -811,7 +814,9 @@ h1 {
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .shop_btn:hover {
@@ -819,13 +824,10 @@ h1 {
   color: white;
 }
 
-/* ─────────────────────────────────────────
-   S6 — CAFE & WHOLESALE
-───────────────────────────────────────── */
 .s6 {
   display: flex;
   flex-direction: column;
-  min-height: 60vh;
+  min-height: 50vh;
   border-bottom: 2px solid #111;
 }
 
@@ -852,13 +854,17 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 40px 24px;
+  padding: 40px;
+  padding: 60px 48px;
+  font-size: clamp();
+  background: #2a2857;
+  color: white;
   gap: 24px;
 }
 
-.s6_right .h2Text {
+.s6_right h3 {
   text-align: left;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2em, 15vw, 4em);
 }
 
 .s6_right p {
@@ -868,99 +874,441 @@ h1 {
   max-width: 400px;
 }
 
-
-footer {
-  background: var(--navy);
-  color: white;
-  padding: 50px 24px 30px;
+/* ─────────────────────────────────────────
+   S7 — BARISTA BLENDS SLIDER
+───────────────────────────────────────── */
+.s7 {
+  background: #b5711e;
+  padding: 50px 0 0;
+  overflow: hidden;
+  position: relative;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 24px;
-  margin-bottom: 40px;
+.s7_header {
+  text-align: center;
+  padding: 0 20px 36px;
 }
 
-.footer-col h4 {
-  font-family: "Roboto Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+.s7_title {
+  font-family: Impact, "Oswald", "Arial Narrow Bold", sans-serif;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 900;
   text-transform: uppercase;
-  opacity: 0.55;
-  margin-bottom: 14px;
-}
-
-.footer-col a {
-  display: block;
-  font-family: "Reckless", serif;
-  font-size: 1rem;
   color: white;
-  opacity: 0.85;
-  margin-bottom: 8px;
-  text-transform: capitalize;
-  transition: opacity 0.2s;
+  letter-spacing: 1px;
+  line-height: 1.1;
 }
 
-.footer-col a:hover {
-  opacity: 1;
+.s7_sub {
+  font-family: "Roboto Mono", monospace;
+  font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 8px;
 }
 
-.footer-logo img {
-  height: 30px;
-  filter: brightness(0) invert(1);
-  margin-bottom: 16px;
-}
-
-.footer-logo p {
-  font-size: 0.85rem;
-  opacity: 0.6;
-  line-height: 1.6;
-  max-width: 260px;
-}
-
-.footer-social {
-  display: flex;
-  gap: 14px;
-  margin-top: 16px;
-}
-
-.footer-social a {
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
+/* Slider wrapper — contains arrows + card */
+.s7_slider {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  color: white;
-  opacity: 0.8;
-  transition: opacity 0.2s, border-color 0.2s;
-  margin-bottom: 0;
+  padding: 0 50px;
+  /* space for arrows */
 }
 
-.footer-social a:hover {
-  opacity: 1;
-  border-color: white;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  padding-top: 20px;
+/* The peach card */
+.s7_card {
+  background: #f5c897;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-width: 1100px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-size: 12px;
-  opacity: 0.5;
+  padding: 0 20px 40px;
+  position: relative;
+  overflow: visible;
 }
+
+/* Image overflows upward out of the card */
+.s7_card_img {
+  width: 70%;
+  max-width: 320px;
+  margin-top: -40px;
+  /* pull image up over the brown bg */
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.s7_card_img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.18));
+}
+
+/* Text side */
+.s7_card_body {
+  padding: 20px 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* "NICE" badge */
+.s7_badge {
+  display: inline-block;
+  font-family: Impact, "Oswald", "Arial Narrow Bold", sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  border: 2px solid #111;
+  border-radius: 6px;
+  padding: 2px 10px;
+  background: #f5c897;
+  color: #111;
+  width: fit-content;
+}
+
+/* Product name — large serif */
+.s7_product_name {
+  font-family: "Reckless", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 8vw, 4.5rem);
+  line-height: 1;
+  color: #1a1a1a;
+}
+
+.s7_desc {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  line-height: 1.6;
+  color: #3a2a10;
+  max-width: 380px;
+}
+
+.s7_shop_btn {
+  display: inline-block;
+  background: white;
+  color: #111;
+  border: 1.5px solid #111;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  width: fit-content;
+}
+
+.s7_shop_btn:hover {
+  background: #111;
+  color: white;
+}
+
+/* Prev / Next arrows */
+.s7_arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.s7_arrow:hover {
+  background: #111;
+  color: white;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.s7_arrow--prev {
+  left: 6px;
+}
+
+.s7_arrow--next {
+  right: 6px;
+}
+
+
+
+.s8 {
+  background: #f5f0e8;
+  width: 100%;
+  padding: 60px 0 70px;
+}
+
+/* ── HEADING ── */
+.s8_heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.25;
+}
+
+.s8_heading i {
+  font-style: italic;
+}
+
+/* ── SLIDER WRAPPER ── */
+.s8_slider_wrap {
+  position: relative;
+  width: 100%;
+}
+
+/* ── CARDS TRACK ── */
+.s8_cards {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 24px 10px;
+  scrollbar-width: none;
+}
+
+.s8_cards::-webkit-scrollbar {
+  display: none;
+}
+.s8_card {
+  flex-shrink: 0;
+  width: 240px;
+  border-radius: 16px;
+  border: 2px solid #2a2857;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background: white;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.s8_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(42, 40, 87, 0.18);
+}
+
+.s8_card_img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.s8_card_img.has-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s8_card_img .circle-bg {
+  width: 82%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.s8_card_img .circle-bg img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+.s8_card_img.full-bleed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.s8_badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  background: #2a2857;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 4px;
+}
+
+/* Caption bar */
+.s8_card_caption {
+  background: #c8ddf5;
+  padding: 12px 14px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #1a1a1a;
+  line-height: 1.35;
+}
+
+.s8_arrow {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  color: #111;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transition: background 0.2s;
+}
+
+.s8_arrow:hover {
+  background: #111;
+  color: white;
+}
+
+/* ── PAGINATION DOTS ── */
+.s8_dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.s8_dot {
+  width: 28px;
+  height: 5px;
+  border-radius: 3px;
+  background: #2a2857;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border: none;
+}
+
+.s8_dot.active {
+  opacity: 1;
+}
+
+/* ── CTA BUTTON ── */
+.s8_cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.s8_cta a {
+  background: #2a2857;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  padding: 15px 42px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.s8_cta a:hover {
+  background: #1a1840;
+  transform: translateY(-1px);
+}
+
+.s9 {
+  height: 100vh;
+  background-image: url(img/bigimg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+
+
+}
+
+.s9 .card {
+  background: rgb(255, 123, 0);
+  width: 100%;
+  height: 90%;
+  border: 1px solid #000;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+
+  h3 {
+
+    font-family: Reckless;
+    text-transform: capitalize;
+    font-size: clamp(4em, 4vw, 3em);
+    font-weight: normal;
+  }
+}
+
+.s9_body {
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  flex-direction: column;
+}
+
+
 
 
 @media (min-width: 1024px) {
 
   /* Wider nav */
+  .ri-menu-fill {
+    display: none;
+  }
+
   nav {
     width: 90%;
     max-width: 1400px;
@@ -972,26 +1320,22 @@ footer {
     display: flex;
     align-items: center;
     gap: 24px;
-    font-family: Roboto Mono;
-    font-size: 5px;
+    font-family: "Roboto Mono";
     text-transform: uppercase;
     letter-spacing: 0.06em;
     height: 100%;
-
   }
 
   .nav-links a {
     color: #111;
     position: relative;
     white-space: nowrap;
-
   }
 
   .nav-actions .nav-links a {
     font-weight: normal;
     font-size: 12px;
   }
-
 
   .nav-links a::after {
     content: "";
@@ -1042,7 +1386,6 @@ footer {
   .styleBtn {
     position: absolute;
     left: 50%;
-    
     transform: translate(-50%, -50%) rotate(-4deg);
     bottom: 20px;
     width: fit-content;
@@ -1088,17 +1431,64 @@ footer {
 
   .s6_right {
     padding: 60px 48px;
+    font-size: clamp();
+    background: #2a2857;
+    color: white;
   }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+  .s7_card {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0 60px 50px;
+    gap: 40px;
+    border-radius: 24px 24px 0 0;
   }
-}
 
-@media (min-width: 1280px) {
-  .nav-links {
-    gap: 32px;
-    font-size: 13px;
+  .s7_card_img {
+    width: 40%;
+    max-width: 380px;
+    margin-top: -60px;
+    margin-bottom: 0;
   }
+
+  .s7_card_body {
+    width: 50%;
+    padding: 40px 0 0;
+    gap: 18px;
+  }
+
+  .s7_arrow--prev {
+    left: 10px;
+  }
+
+  .s7_arrow--next {
+    right: 10px;
+  }
+
+  .s7_arrow {
+    width: 46px;
+    height: 46px;
+  }
+
+  .s8_cards {
+    padding: 10px 60px 10px;
+  }
+
+  .s8_card {
+    width: 260px;
+  }
+
+  .s8_arrow {
+    right: 14px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .s9 .card {
+    background: orangered;
+    width: 30%;
+
+  }
+
+ 
 }
