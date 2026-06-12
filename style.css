@@ -9,7 +9,23 @@ body {
     background: #000;
     color: #f7f4f4;
 }
+.navbar {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
 
+.navbar a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.navbar a.active {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
 .page {
     max-width: 720px;
     margin: 0 auto;
