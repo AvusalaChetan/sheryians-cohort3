@@ -11,9 +11,9 @@ const strap = (text) => {
   const saveEdit = document.createElement("button");
 
   span.textContent = `${text}`;
-  deleteBtn.textContent = "D";
-  editBtn.textContent = "E";
-  saveEdit.textContent = "S";
+  deleteBtn.textContent = "Delete";
+  editBtn.textContent = "Edit";
+  saveEdit.textContent = "Save";
 
   todoItem.classList.add("todoItem");
   deleteBtn.classList.add("deleteBtn");

@@ -1,141 +1,150 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:  rgb(28, 28, 28);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(101, 101, 100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 main {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
 .container {
-    background: #333;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 500px;
-    padding: 30px;
+  background: #333;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
 }
+/* input{
+    height: 2em;
+    width: 75%;
+    padding: 12px;
+    border-radius: 7px;
+    border: none;
+
+} */
 
 h1 {
-    text-align: center;
-    color: whitesmoke;
-    margin-bottom: 30px;
-    font-size: 28px;
+  text-align: center;
+  color: whitesmoke;
+  margin-bottom: 30px;
+  font-size: 28px;
 }
 
 .inputContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 #todoInput {
-    flex: 1;
-    padding: 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: border-color 0.3s ease;
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
 }
 
 #todoInput:focus {
-    outline: none;
-    border-color: #667eea;
+  outline: none;
+  border-color: #667eea;
 }
 
 .addBtn {
-    padding: 12px 25px;
-background: linear-gradient(135deg, #939393 0%, #0d0d0f 100%);    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    /* flex: 1; */
-    width: 25%;
-    height: inherit;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #939393 0%, #0d0d0f 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  /* flex: 1; */
+  width: 25%;
+  height: inherit;
 }
 
 .addBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
 }
 
 .addBtn:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .todoList {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .todoItem {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 15px;
-    background: rgb(245, 222, 179);
-    border-radius: 8px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-    border-left: 4px solid ;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: rgb(245, 222, 179);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  border-left: 4px solid;
 }
 
- 
- 
 .todoText {
-    flex: 1;
-    font-size: 15px;
-    color: #333;
+  flex: 1;
+  font-size: 15px;
+  color: #333;
 }
- 
-button{
-  width: 28px;
-    height: 28px;
-    border-radius: 20%;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+button {
+  width: fit-content;
+  padding: 12px;
+  height: 28px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
 }
 
 .deleteBtn {
-    background: #ff6b6b;
-    color: white;
-    border: none;
-    transition: all 0.2s;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  transition: all 0.2s;
 }
 
 button:hover {
-     transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .deleteBtn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
-
- 

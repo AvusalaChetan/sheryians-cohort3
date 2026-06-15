@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #d1d5db 0%, #e5e7eb 100%);
+}
+
+main {
+    height: 100%;
+    width: 100%;
+
+}
+
+section {
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+ }
+
+ 
+
+.cardHeader {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    overflow: hidden;
+  }
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in;
+}
+.card img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+}
+
+.btnContainer {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.editBtn,
+.delBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editBtn {
+    background: #3b82f6;
+    color: white;
+}
+
+.editBtn:hover {
+    background: #2563eb;
+    transform: scale(1.15);
+}
+
+.delBtn {
+    background: #ef4444;
+    color: white;
+}
+
+.delBtn:hover {
+    background: #dc2626;
+    transform: scale(1.15);
+}
+
+.cardInfo {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardInfo p {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.cardInfo p strong {
+    color: #1f2937;
+}
+
+.cardDate {
+    font-size: 12px;
+    color: #9ca3af;
+    padding: 0 16px 12px 0;
+    text-align: right;
+}
+
+form {
+    width: 80%;
+    margin: auto;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+form label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+form input {
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #e5e7eb;
+    border-radius: 0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+form input:focus {
+    outline: none;
+    border-bottom-color: #3b82f6;
+    box-shadow: none;
+}
+
+#createCard {
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+#createCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+#createCard:active {
+    transform: translateY(0);
+}
