@@ -3,6 +3,7 @@ const container = document.querySelector(".container");
 const projects = [
 { name: "bulb", tag: "Practice", status: "Open" , path: 'projects/bulb/'}, 
 {name: "todo list", tag: "Task", status: "Open", path: "projects/todo/"},
+{name: "user card", tag: "Task", status: "Open", path: "projects/createCard/"},
  
  ];
 
