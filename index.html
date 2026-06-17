@@ -27,147 +27,161 @@
         <h1>Sheryians Assignments</h1>
         <p>Cohort 3.0 — all my assignments</p>
       </div>
-
-      <div class="divider"></div>
-
-      <section class="section">
-        <div class="section-title">
-          <p>Assignment 1</p>
-          <span> - </span>
-          <p class="topic">( postions: absolute , relative )</p>
-        </div>
-        <div class="cards">
-          <a class="card" href="assignments/ASSIGNMENT-1/" target="_blank">
-            <span class="badge general">General</span>
-            <p class="card-title">Assignment 1</p>
-            <p class="card-sub">HTML & CSS basics</p>
-            <p class="card-arrow">Open</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-title">
-          <p class="">Assignment 2</p>
-          <span> - </span>
-          <p class="topic">(flexbox, postions)</p>
-        </div>
-        <div class="cards">
-          <a class="card" href="assignments/ASSIGNMENT-2/easy/" target="_blank">
-            <span class="badge easy">Easy</span>
-            <p class="card-title">Assignment 2</p>
-            <p class="card-arrow">Open</p>
-          </a>
-
-          <a
-            class="card"
-            href="assignments/ASSIGNMENT-2/medium/"
-            target="_blank"
-          >
-            <span class="badge medium">Medium</span>
-            <p class="card-title">Assignment 2</p>
-            <p class="card-arrow">Open</p>
-          </a>
-
-          <a class="card" href="assignments/ASSIGNMENT-2/hard/" target="_blank">
-            <span class="badge hard">Hard</span>
-            <p class="card-title">Assignment 2</p>
-            <p class="card-arrow">Open</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-title">
-          <p class="">Assignment 3</p>
-          <span> - </span>
-          <p class="topic">(flexbox, postions)</p>
-        </div>
-        <div class="cards">
-          <a class="card" href="assignments/ASSIGNMENT-3/easy/" target="_blank">
-            <span class="badge easy">Easy</span>
-            <p class="card-title">Assignment 3</p>
-            <p class="card-arrow">Open</p>
-          </a>
-          <a
-            class="card"
-            href="assignments/ASSIGNMENT-3/medium/"
-            target="_blank"
-          >
-            <span class="badge medium">Medium</span>
-            <p class="card-title">Assignment 3</p>
-            <p class="card-arrow">Open</p>
-          </a>
-          <a class="card" href="assignments/ASSIGNMENT-3/hard/" target="_blank">
-            <span class="badge hard">Hard</span>
-            <p class="card-title">Assignment 3</p>
-            <p class="card-arrow">Open</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-title">
-          <p class="">Assignment 4</p>
-          <span> - </span>
-          <p class="topic">(css grid)</p>
-        </div>
-
-        <div class="cards">
-          <a class="card" href="assignments/ASSIGNMENT-4/easy/" target="_blank">
-            <span class="badge easy">Easy</span>
-            <p class="card-title">Assignment 4</p>
-            <p class="card-arrow">Open</p>
-          </a>
-          <a
-            class="card"
-            href="assignments/ASSIGNMENT-4/medium/"
-            target="_blank"
-          >
-            <span class="badge medium">Medium</span>
-            <p class="card-title">Assignment 4</p>
-            <p class="card-arrow">Open</p>
-          </a>
-          <a class="card" href="assignments/ASSIGNMENT-4/hard/" target="_blank">
-            <span class="badge hard">Hard</span>
-            <p class="card-title">Assignment 4</p>
-            <p class="card-arrow">Open</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-title">
-          <p class="">Assignment 5</p>
-          <span> - </span>
-          <p class="topic">(html,css)</p>
-        </div>
-
-        <div class="cards">
-          <a class="card" href="assignments/ASSIGNMENT-5/" target="_blank">
-            <span class="badge general">full web page</span>
-            <p class="card-title">Assignment 5</p>
-            <p class="card-arrow">Open</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-title">
-          <p class="">Assignment 6</p>
-          <span> - </span>
-          <p class="topic">(html,css)</p>
-        </div>
-
-        <div class="cards">
-          <a class="card" href="assignments/ASSIGNMENT-6/" target="_blank">
-            <span class="badge general">full web page</span>
-            <p class="card-title">Assignment 6</p>
-            <p class="dec">twoleavestea - website clone</p>
-            <p class="card-arrow">Open</p>
-          </a>
-        </div>
-      </section>
+      <hr class="divider" />
+      <div class="container"></div>
     </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const assignments = [
+        {
+          name: "Assignment 1",
+          topic: "positions: absolute, relative",
+          cards: [
+            {
+              tag: "general",
+              text: "General",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-1/",
+            },
+          ],
+        },
+        {
+          name: "Assignment 2",
+          topic: "flexbox, positions",
+          cards: [
+            {
+              tag: "easy",
+              text: "Easy",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-2/easy/",
+            },
+            {
+              tag: "medium",
+              text: "Medium",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-2/medium/",
+            },
+            {
+              tag: "hard",
+              text: "Hard",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-2/hard/",
+            },
+          ],
+        },
+        {
+          name: "Assignment 3",
+          topic: "flexbox, positions",
+          cards: [
+            {
+              tag: "easy",
+              text: "Easy",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-3/easy/",
+            },
+            {
+              tag: "medium",
+              text: "Medium",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-3/medium/",
+            },
+            {
+              tag: "hard",
+              text: "Hard",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-3/hard/",
+            },
+          ],
+        },
+        {
+          name: "Assignment 4",
+          topic: "css grid",
+          cards: [
+            {
+              tag: "easy",
+              text: "Easy",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-4/easy/",
+            },
+            {
+              tag: "medium",
+              text: "Medium",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-4/medium/",
+            },
+            {
+              tag: "hard",
+              text: "Hard",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-4/hard/",
+            },
+          ],
+        },
+        {
+          name: "Assignment 5",
+          topic: "html, css",
+          cards: [
+            {
+              tag: "general",
+              text: "full web page",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-5/",
+            },
+          ],
+        },
+        {
+          name: "Assignment 6",
+          topic: "html, css",
+          cards: [
+            {
+              tag: "general",
+              text: "full web page",
+              status: "Open",
+              path: "assignments/ASSIGNMENT-6/",
+            },
+          ],
+        },
+        {
+          name: "task Management",
+          topic: "html, css, JavaScript",
+          cards:[
+            {
+              tag: "Task",
+              path: "projects/taskMagement",
+              status: "pending",
+              text:'workDir'
+
+            },
+            
+          ]
+        },
+      ];
+
+      container.innerHTML = "";
+
+      assignments.forEach(({name, topic, cards}) => {
+        const cardsHTML = cards
+          .map(
+            ({tag, text, status, path}) => `
+          <a class="card" href="${path}" target="_blank">
+            <span class="badge ${tag}">${text}</span>
+            <p class="card-title">${name}</p>
+            <p class="topic">${topic}</p>
+            <p class="card-arrow">${status}</p>
+          </a>
+  `,
+          )
+          .join("");
+
+        container.innerHTML += `
+          <section class="section">
+            <div class="cards">
+              ${cardsHTML}
+            </div>
+          </section>
+  `;
+      });
+    </script>
   </body>
 </html>

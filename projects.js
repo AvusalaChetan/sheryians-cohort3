@@ -4,6 +4,8 @@ const projects = [
 { name: "bulb", tag: "Practice", status: "Open" , path: 'projects/bulb/'}, 
 {name: "todo list", tag: "Task", status: "Open", path: "projects/todo/"},
 {name: "user card", tag: "Task", status: "Open", path: "projects/createCard/"},
+{name: "random box game", tag: "Task", status: "Open", path: "projects/randomBoxGame"},
+{name: "task Management", tag: "assignment", status: "pending", path: "projects/taskMagement"},
  
  ];
 
@@ -14,9 +16,9 @@ projects.forEach(({name, tag, status, path}) => {
   cards.classList.add("cards");
  
   cards.innerHTML = `
-         <a class="card" href=${path} target="_blank">
-            <span class="badge easy">${tag}</span>
-            <p class="card-title">${name.toUpperCase()} </p>
+         <a class="card " href=${path} target="_blank">
+            <span class="badge general ${tag}">${tag}</span>
+            <p class="card-title">${name} </p>
             <p class="card-arrow">${status}</p>
           </a>
 
