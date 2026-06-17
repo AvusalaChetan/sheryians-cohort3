@@ -1,15 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main>
-        dsa
-    </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskBoard Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app-container">
+      <nav class="">
+        <div class="logo-section">
+          <div class="logo-icon">T</div>
+          <div>
+            <h3 class="logo-title">Task Manager</h3>
+            <p class="logo-subtitle">created by Chetan</p>
+          </div>
+        </div>
+        <button class="btn-primary" id="addnew">Add New</button>
+      </nav>
+
+      <main class="main-content">
+
+        <div class="taskContainer">
+          <div id="pending" class="task-holder" >
+            
+             </div>
+
+          <div id="inProgress" class="task-holder"></div>
+
+          <div id="completed" class="task-holder"></div>
+        </div>
+
+        <div class="form-container">
+          <button class="closeForm">x</button>
+          <h3>Create New Task</h3>
+          <p class="form-subtitle">
+            Add details to launch a new item onto your board.
+          </p>
+
+          <form>
+            <div class="form-group">
+              <label for="title">Task Name</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="e.g., Design Landing Page"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="dec">Description</label>
+              <textarea
+                id="dec"
+                placeholder="Provide a brief summary of the requirements..."
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="date">completion date</label>
+              <input
+                type="date"
+                id="date"
+                placeholder="e.g., Design Landing Page"
+              />
+            </div>
+
+            <button type="submit" class="btn-submit">Create Task</button>
+          </form>
+        </div>
+      </main>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
