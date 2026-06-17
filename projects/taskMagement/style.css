@@ -1,4 +1,3 @@
- 
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,11 +14,47 @@
   --text-secondary: #6c757d;
   --primary-color: #5c3cf2;
   --border-color: #e9ecef;
+
   --pending: #f1c40f;
   --progress: #3498db;
   --completed: #2ecc71;
-  --high-priority: #ff7675;
-  --normal-priority: #74b9ff;
+
+  --high-priority-bg: #ffeaa7;
+  --high-priority-text: #d63031;
+  --normal-priority-bg: #dfe6e9;
+  --normal-priority-text: #2d3436;
+
+  --btn-action-start: #eef2ff;
+  --btn-action-complete: #e8fbf1;
+}
+
+[data-theme="dark"] {
+  --bg-main: #0f111a;
+  --bg-sidebar: #161925;
+
+  --bg-card: #1f2335;
+
+  --bg-column: #161925;
+
+  --text-primary: #f8f9fa;
+
+  --text-secondary: #a0aec0;
+
+  --primary-color: #7053ff;
+
+  --border-color: #2a2f45;
+
+  --pending: #f39c12;
+  --progress: #2980b9;
+  --completed: #27ae60;
+
+  --high-priority-bg: rgba(214, 48, 49, 0.2);
+  --high-priority-text: #ff7675;
+  --normal-priority-bg: rgba(160, 174, 192, 0.15);
+  --normal-priority-text: #e2e8f0;
+
+  --btn-action-start: rgba(112, 83, 255, 0.15);
+  --btn-action-complete: rgba(39, 174, 96, 0.15);
 }
 
 html,
@@ -80,6 +115,8 @@ nav {
 
 .btn-primary {
   background: var(--primary-color);
+  
+    color: var(--high-priority-text);
   color: white;
   border: none;
   padding: 12px;
@@ -124,9 +161,8 @@ nav {
   display: flex;
   gap: 20px;
   height: 100%;
- 
+
   align-items: flex-start;
- 
 }
 
 .task-holder {
@@ -137,7 +173,7 @@ nav {
   padding: 16px;
   max-height: 100%;
   overflow-y: auto;
- }
+}
 
 .column-header {
   display: flex;
@@ -176,7 +212,7 @@ nav {
   border-radius: 12px;
   font-weight: 600;
 }
- 
+
 .cards {
   height: 100%;
   width: 100%;
@@ -295,7 +331,6 @@ nav {
   opacity: 0.85;
 }
 
-
 .btn-action.start {
   background: #eef2ff;
   color: var(--primary-color);
@@ -307,7 +342,6 @@ nav {
   color: #fff;
 }
 
- 
 .btn-action.complete {
   background: #e8fbf1;
   color: var(--completed);
@@ -319,7 +353,6 @@ nav {
   color: #fff;
 }
 
- 
 .btn-action.edit {
   background: #fffbeb;
   color: #b45309;
@@ -330,7 +363,6 @@ nav {
   background: #f59e0b;
   color: #fff;
 }
-
 
 .btn-action.delete {
   background: #fff5f5;
@@ -454,10 +486,19 @@ nav {
   letter-spacing: 0.2px;
 }
 
-.err{
+.err {
   color: red;
   text-transform: capitalize;
   background: pink;
-padding: 12px ;
-text-align: center;
+  padding: 12px;
+  text-align: center;
+}
+
+.theme{
+  background: var(--primary-secondary);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
 }

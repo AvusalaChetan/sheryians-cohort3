@@ -2,6 +2,7 @@ const addNew = document.querySelector("#addnew");
 const formContainer = document.querySelector(".form-container");
 const form = document.querySelector("form");
 const closeForm = document.querySelector(".closeForm");
+const theme = document.querySelector("#theme");
 
 const taskArr = [];
 const workingArr = [];
@@ -9,6 +10,14 @@ const completedArr = [];
 
 let isEdit = false;
 let editIndex = null;
+
+theme.addEventListener("click", (e) => {
+  const presentTheme = document.body.getAttribute("data-theme");
+  const targetTheme = presentTheme === "dark" ? "light" : "dark";
+  document.body.setAttribute("data-theme", targetTheme);
+  theme.style.color = targetTheme === 'dark' ? 'white':'black'
+});
+
 addNew.addEventListener("click", (e) => {
   formContainer.style.display = "block";
 });
@@ -97,7 +106,7 @@ function edit(taskName) {
   formContainer.style.display = "block";
   let task = taskArr.find((ele) => ele.taskName === taskName);
   editIndex = taskArr.findIndex((elem) => elem.taskName === taskName);
-  
+
   form[0].value = task.taskName;
   form[1].value = task.dec;
   form[2].value = task.Date;
@@ -113,13 +122,13 @@ form.addEventListener("submit", (e) => {
   let date = dateEle.value;
 
   if (!taskName.trim() || !dec.trim() || !date.trim()) {
-    let err = document.createElement('p')
-    err.classList.add('err')
-    err.textContent = 'all fields are require'
-    formContainer.prepend(err)
+    let err = document.createElement("p");
+    err.classList.add("err");
+    err.textContent = "all fields are require";
+    formContainer.prepend(err);
     return;
   }
-  
+
   const today = new Date();
 
   let task = {
