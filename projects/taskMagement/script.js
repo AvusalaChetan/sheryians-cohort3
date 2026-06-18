@@ -15,7 +15,6 @@ theme.addEventListener("click", (e) => {
   const presentTheme = document.body.getAttribute("data-theme");
   const targetTheme = presentTheme === "dark" ? "light" : "dark";
   document.body.setAttribute("data-theme", targetTheme);
-  theme.style.color = targetTheme === 'dark' ? 'white':'black'
 });
 
 addNew.addEventListener("click", (e) => {
@@ -63,7 +62,7 @@ function createUi() {
     else col = completed;
 
     col.innerHTML += `
- <div class="card">
+ <div class="card" data-status='pending'>
 
   <h4>${taskName}</h4>
   <p class="card-desc">${dec}</p>
@@ -112,6 +111,28 @@ function edit(taskName) {
   form[2].value = task.Date;
 }
 
+function del(idx) {
+  taskArr.splice(idx, 1);
+  createUi();
+}
+
+function workOnIt(idx) {
+  const workingTask = taskArr.splice(idx, 1);
+  workingTask[0].status = "inProgress";
+  workingArr.push(...workingTask);
+
+  createUi();
+}
+
+function taskComplete(idx) {
+  console.log("helolo");
+  const completedTask = workingArr.splice(idx, 1);
+  completedTask[0].status = "completed";
+  completedArr.push(...completedTask);
+
+  createUi();
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const taskNameEle = e.target[0];
@@ -155,24 +176,70 @@ form.addEventListener("submit", (e) => {
   formContainer.style.display = "none";
 });
 
-function del(idx) {
-  taskArr.splice(idx, 1);
-  createUi();
+// here i am shwoing evetn Event Propagation Demo
+
+const gp = document.querySelector("#gp");
+const parent = document.querySelector("#parent");
+const child = document.querySelector("#child");
+const logList = document.querySelector(".log-list");
+const btnBubble = document.querySelector(".btn-bubble");
+const btnCapture = document.querySelector(".btn-capture");
+let isCapture = false;
+
+function propgaion(e) {
+  const li = document.createElement("li");
+  li.textContent = `  ${e.currentTarget.id}`;
+  logList.append(li);
 }
 
-function workOnIt(idx) {
-  const workingTask = taskArr.splice(idx, 1);
-  workingTask[0].status = "inProgress";
-  workingArr.push(...workingTask);
+function updateListeners() {
+  gp.removeEventListener("click", propgaion, true);
+  gp.removeEventListener("click", propgaion, false);
+  parent.removeEventListener("click", propgaion, true);
+  parent.removeEventListener("click", propgaion, false);
+  child.removeEventListener("click", propgaion, true);
+  child.removeEventListener("click", propgaion, false);
 
-  createUi();
+  gp.addEventListener("click", propgaion, isCapture);
+  parent.addEventListener("click", propgaion, isCapture);
+  child.addEventListener("click", propgaion, isCapture);
 }
 
-function taskComplete(idx) {
-  console.log("helolo");
-  const completedTask = workingArr.splice(idx, 1);
-  completedTask[0].status = "completed";
-  completedArr.push(...completedTask);
+btnCapture.addEventListener("click", (e) => {
+  isCapture = true;
+  btnCapture.classList.add("active");
+  btnBubble.classList.remove("active");
+  logList.innerHTML = "";
+  updateListeners();
+});
 
-  createUi();
-}
+btnBubble.addEventListener("click", (e) => {
+  isCapture = false;
+  btnCapture.classList.remove("active");
+  btnBubble.classList.add("active");
+  logList.innerHTML = "";
+  updateListeners();
+});
+
+updateListeners();
+
+// here i am shwoing Browser Rendering Pipeline
+
+const renderCycle = [
+  "html",
+  "parsing",
+  "tokenzation",
+  "Dom tree",
+  "css",
+  "cssom tree",
+  "DOM Tree + CSSOM Tree",
+  "render Tree",
+];
+const renderPipeline = document.querySelector("#renderPipeline");
+
+renderCycle.forEach((ele) => {
+  const p = document.createElement("p");
+  p.classList.add("step");
+  p.innerHTML = `${ele} <br><i class="ri-arrow-down-line"></i>`;
+  renderPipeline.append(p);
+});

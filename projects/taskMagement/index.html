@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TaskBoard Dashboard</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
   </head>
 
   <body data-theme="light">
-    <div class="app-container" >
+    <div class="app-container">
       <nav class="">
         <div class="logo-section">
           <div class="logo-icon">T</div>
@@ -19,17 +23,14 @@
         </div>
         <div>
           <button class="btn-primary" id="addnew">Add New</button>
-          <button class="theme " id="theme">theme</button>
-
+          <button class="theme" id="theme">theme</button>
         </div>
       </nav>
 
       <main class="main-content">
-
+        <section>
         <div class="taskContainer">
-          <div id="pending" class="task-holder" >
-            
-             </div>
+          <div id="pending" class="task-holder"></div>
 
           <div id="inProgress" class="task-holder"></div>
 
@@ -74,6 +75,56 @@
             <button type="submit" class="btn-submit">Create Task</button>
           </form>
         </div>
+</section>
+        <!-- ------------------------------------------------------------------------- -->
+        <section class="s2">
+          <div id="eventpropagationCon">
+            <h2>Event Propagation Demo</h2>
+            <hr>
+            <p class="demo-desc">
+              select to see 
+              <strong>Capturing</strong> and <strong>Bubbling</strong> Event.
+            </p>
+
+            <div class="demo-actions">
+              <button class="btn-demo btn-bubble active" id="btn-bubble">
+                Bubbling Mode
+              </button>
+              <button class="btn-demo btn-capture" id="btn-capture">
+                Capturing Mode
+              </button>
+            </div>
+
+            <div class="propagation-zone">
+              <div class="box grandparent" id="gp">
+                <span>Grandparent</span>
+                <div class="box parent" id="parent">
+                  <span>Parent</span>
+                  <div class="box child" id="child">
+                    <span>Child</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="log-window">
+              <h4>Event Execution Log</h4>
+              
+              <ul class="log-list">
+                <li class="empty-log">
+                  Click a nested layer above to trigger propagation...
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="BrowserRenderingPipeline">
+            <h2>Browser Rendering Pipeline</h2>
+            <hr>
+            <div id="renderPipeline">
+               
+            </div>
+          </div>
+        </section>
       </main>
     </div>
     <script src="script.js"></script>
