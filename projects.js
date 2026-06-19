@@ -5,7 +5,7 @@ const projects = [
 {name: "todo list", tag: "Task", status: "Open", path: "projects/todo/"},
 {name: "user card", tag: "Task", status: "Open", path: "projects/createCard/"},
 {name: "random box game", tag: "Task", status: "Open", path: "projects/randomBoxGame"},
-{name: "task Management", tag: "assignment", status: "pending", path: "projects/taskMagement"},
+{name: "task Management", tag: "assignment", status: "open", path: "projects/taskMagement"},
  
  ];
 
