@@ -6,7 +6,7 @@ const projects = [
 {name: "user card", tag: "Task", status: "Open", path: "projects/createCard/"},
 {name: "random box game", tag: "Task", status: "Open", path: "projects/randomBoxGame"},
 {name: "task Management", tag: "assignment", status: "open", path: "projects/taskMagement"},
- 
+{ name: "React 1", tag: "Task", status: "open", path: "React/react1/dist/" } 
  ];
 
 projects.forEach(({name, tag, status, path}) => {

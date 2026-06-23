@@ -87,6 +87,9 @@ html {
 
 .hero {
     margin-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
 
     h1 {
         font-size: 28px;
