@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body>
+    <main class="h-screen w-screen px-5 py-3 flex gap-5 flex-col">
+      <h1 id="title" class="text-center font-bold text-2xl">welcome</h1>
+
+      <section class="">
+        <p id="que">Question 3 — Display Input Value</p>
+        <div class="">
+          <input class="border" type="text" id="username" />
+          <button id="show">Show</button>
+          <p id="output"></p>
+        </div>
+      </section>
+
+      <section>
+        <p id="message">Hello World</p>
+        <button id="toggle">Toggle</button>
+      </section>
+      <section>
+        <p id="que">Question 5 — Add New List Item</p>
+        <ul id="list" class="">
+          <li>Apple</li>
+        </ul>
+        <button id="addfruit">Add Fruit</button>
+      </section>
+
+      <section>
+        <p id="que">Question 6 — Remove a Card</p>
+        <div class="card">
+          <h2>JavaScript</h2>
+          <button id="delete">Delete</button>
+        </div>
+      </section>
+      <section>
+        <p id="que">Question 6 — Remove a Card</p>
+        <textarea class="border"></textarea>
+        <p id="char">Characters: 0</p>
+      </section>
+      <section>
+        <p id="que">Question 9 — Todo List</p>
+        <ul id="tasks"></ul>
+        <input id="todoIP" />
+        <button id="add">Add</button>
+      </section>
+      <section>
+        <p id="que">Question 10 — imaage gallery</p>
+        <div>
+          <img id="image" />
+          <button id="nextImg">Next image</button>
+        </div>
+      </section>
+
+      <section class="">
+        <p id="que">Question 12 — Mini Student Manager (Interview Level)</p>
+        <div>
+          <input placeholder="Name" id="name" />
+          <input placeholder="Course" id="Course" />
+          <button id="addStd">Add Student</button>
+          <div>
+             <div>
+              <h3>Student Information</h3>
+              <p>total students <span id="count"> 0 </span></p>
+            </div>
+            <div id="students" class="border mt-12">
+             
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
