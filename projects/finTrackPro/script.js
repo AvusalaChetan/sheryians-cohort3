@@ -18,9 +18,8 @@ let isEdit = false;
 let editingIdx = null;
 
 let transactions =
-  JSON.parse(localStorage.getItem(`transactions-${user.username}`)) ||
-  localStorage.setItem(`transactions-${user.username}`, JSON.stringify([]));
-
+  JSON.parse(localStorage.getItem(`transactions-${user.username}`)) || []
+ 
 transactionForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const type = document.getElementById("type").value;
@@ -142,6 +141,7 @@ function renderChart() {
     },
   });
 }
+
 renderChart();
 
 function renderTransactions(arr = transactions) {
@@ -292,3 +292,10 @@ function defSetting() {
   currency.value = user.currency;
 }
 defSetting();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const user = checkAuth();
+    renderTransactions(transactions);
+    updateCards();
+    renderChart();
+});
