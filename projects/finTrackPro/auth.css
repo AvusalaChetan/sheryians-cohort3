@@ -1,0 +1,129 @@
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ body {
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+     background-color: #f4f7f6;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+ }
+
+ form {
+     background: #fff;
+     padding: 2.5rem;
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+     width: 100%;
+     max-width: 420px;
+     text-align: center;
+ }
+
+ h2 {
+     font-size: 1.6rem;
+     font-weight: 700;
+     margin-bottom: 0.5rem;
+ }
+
+ p {
+     font-size: 0.95rem;
+     color: #333;
+     margin-bottom: 2rem;
+ }
+
+ label {
+     display: block;
+     font-size: 0.9rem;
+     font-weight: 600;
+     text-align: left;
+     margin-bottom: 0.5rem;
+ }
+
+ input {
+     width: 100%;
+     padding: 0.8rem;
+     border: 1px solid #d1d5db;
+     border-radius: 6px;
+     background-color: #e8f0fe;
+     font-size: 0.95rem;
+     outline: none;
+     margin-bottom: 1.25rem;
+     transition: border-color 0.2s, background-color 0.2s;
+ }
+
+ input:focus {
+     border-color: #28a745;
+     background-color: #fff;
+ }
+
+ button {
+     width: 100%;
+     padding: 0.8rem;
+     color: #fff;
+     border: none;
+     border-radius: 6px;
+     font-size: 0.95rem;
+     font-weight: 600;
+     cursor: pointer;
+     margin-top: 0.5rem;
+     transition: background-color 0.2s;
+ }
+
+ a {
+     color: #21a44a;
+     text-decoration: none;
+     font-weight: 500;
+     cursor: pointer;
+ }
+
+ a:hover {
+     text-decoration: underline;
+ }
+
+ .btn-login {
+     background-color: #0056b3;
+ }
+
+ .btn-login:hover {
+     background-color: #004494;
+ }
+
+ .btn-register {
+     background-color: #21a44a;
+ }
+
+ .btn-register:hover {
+     background-color: #1a883c;
+ }
+
+ .footer {
+     margin-top: 1.5rem;
+     margin-bottom: 0;
+ }
+
+.showpass {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.showpass input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.showpass span {
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+}

@@ -9,6 +9,8 @@ const projects = [
 { name: "React 1", tag: "Task", dec:'first react project creation ', status: "open", path: "React/react1/dist/" } ,
 { name: "Text - Speech", tag: "pratice", dec:'text to speech ', status: "open", path: "React/react2/dist/" } ,
 { name: "partice dom ", tag: "Practice",dec:'practiced dom under "Ritik Rajput"', status: "Open" , path: 'pratice/dom'}, 
+{name: "FinTrack Pro", tag: "assignment",dec:'personal finace tracker',  status: "open", path: "projects/finTrackPro"},
+
  ];
 
 projects.forEach(({name, tag, status, path,dec}) => {

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinTrack Pro</title>
+    <link rel="stylesheet" href="auth.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <form id="login-form">
+      <h2>Welcome Back</h2>
+      <p>Login to FinTrack Pro</p>
+
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username" name="username" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" required />
+      <div class="showpass"><input type="checkbox" id="eye" /> <span>show passord</span></div>
+
+      <button type="submit" class="btn-login">Login</button>
+
+      <p class="footer">
+        Don't have an account?
+        <a href="register.html">Register here</a>
+      </p>
+    </form>
+
+    <script src="auth.js"></script>
+    <script>
+      let form = document.querySelector("#login-form");
+      const userNameEle = document.querySelector("#login-username");
+      const passwordEle = document.querySelector("#login-password");
+      let isPassInView = false;
+
+      document.querySelector("#eye").addEventListener("click", (e) => {
+        isPassInView = !isPassInView;
+
+        isPassInView
+          ? (passwordEle.type = "text")
+          : (passwordEle.type = "password");
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let userName = userNameEle.value;
+        let password = passwordEle.value;
+
+        let islogin = loginUser(userName, password);
+
+        if (islogin.success) {
+          window.location.replace("dashboard.html");
+        } else {
+          alert(islogin.message);
+        }
+      });
+    </script>
+  </body>
+</html>

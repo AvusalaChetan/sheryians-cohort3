@@ -54,7 +54,7 @@ function createUi() {
               </div>`;
 
   const renderCard = (task, idx) => {
-    const { taskName, dec, status, createdAt, completionDate } = task;
+    const {taskName, dec, status, createdAt, completionDate} = task;
 
     let col = null;
     if (status === "pending") col = pending;

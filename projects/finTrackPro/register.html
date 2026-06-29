@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="auth.css" />
+  </head>
+  <body>
+    <form id="register-form">
+      <h2>Create Account</h2>
+      <p>Join FinTrack Pro</p>
+
+      <label for="reg-username">Username</label>
+      <input type="text" id="reg-username" name="username" required />
+
+      <label for="reg-password">Password</label>
+      <input type="password" id="reg-password" name="password" required />
+      <div class="showpass">
+        <input type="checkbox" id="eye" /> <span>show passord</span>
+      </div>
+
+      <button type="submit" class="btn-register">Register</button>
+
+      <p class="footer">
+        Already have an account?
+        <a href="index.html">Login here</a>
+      </p>
+    </form>
+
+    <script src="auth.js"></script>
+    <script>
+      const form = document.querySelector("#register-form");
+      const userNameEle = document.querySelector("#reg-username");
+      const passwordEle = document.querySelector("#reg-password");
+
+      let isPassInView = false;
+
+      document.querySelector("#eye").addEventListener("click", (e) => {
+        isPassInView = !isPassInView;
+
+        isPassInView
+          ? (passwordEle.type = "text")
+          : (passwordEle.type = "password");
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let userName = userNameEle.value;
+        let password = passwordEle.value;
+
+        let isRegiter = regiterUser(userName, password);
+
+        if (isRegiter.success) {
+          window.location.replace("index.html");
+        } else {
+          alert(isRegiter.message);
+        }
+      });
+    </script>
+  </body>
+</html>
