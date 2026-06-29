@@ -39,6 +39,7 @@ function loginUser(username, password) {
   };
 
   localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("theme", 'light');
 
   return {success: true, message: "login successfully"};
 }

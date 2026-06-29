@@ -296,6 +296,7 @@ defSetting();
 document.addEventListener("DOMContentLoaded", () => {
     const user = checkAuth();
     renderTransactions(transactions);
-    updateCards();
+    showAmount();
     renderChart();
+    showDashboard()
 });
