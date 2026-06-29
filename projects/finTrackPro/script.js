@@ -18,8 +18,8 @@ let isEdit = false;
 let editingIdx = null;
 
 let transactions =
-  JSON.parse(localStorage.getItem(`transactions-${user.username}`)) || []
- 
+  JSON.parse(localStorage.getItem(`transactions-${user.id}`)) || [];
+
 transactionForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const type = document.getElementById("type").value;
@@ -54,10 +54,7 @@ transactionForm.addEventListener("submit", (e) => {
   } else {
     transactions.push(transation);
   }
-  localStorage.setItem(
-    `transactions-${user.username}`,
-    JSON.stringify(transactions),
-  );
+  localStorage.setItem(`transactions-${user.id}`, JSON.stringify(transactions));
   transactionForm.reset();
   formContainer.style.display = "none";
   renderTransactions(transactions);
@@ -194,7 +191,7 @@ tbody.addEventListener("click", (e) => {
   if (e.target.closest(".delete-btn")) {
     transactions.splice(index, 1);
     localStorage.setItem(
-      `transactions-${user.username}`,
+      `transactions-${user.id}`,
       JSON.stringify(transactions),
     );
     renderTransactions();
@@ -216,7 +213,7 @@ tbody.addEventListener("click", (e) => {
 resetBtn.addEventListener("click", () => {
   let isBool = confirm("you want to delete all ");
   if (isBool) {
-    localStorage.setItem(`transactions-${user.username}`, JSON.stringify([]));
+    localStorage.setItem(`transactions-${user.id}`, JSON.stringify([]));
     transactions = [];
     renderTransactions(transactions);
   }
@@ -283,8 +280,23 @@ settingsForm.addEventListener("submit", (e) => {
   user.currency = currencyVal;
 
   localStorage.setItem("user", JSON.stringify(user));
+  let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
+  let userFromDB = registeredUsers.find((u) => u.id === user.id);
+  let idxInDB = registeredUsers.findIndex((u) => u.id === user.id);
+
+  let editedUser = {
+    id: user.id,
+    username: fullNameVal,
+    currency: currencyVal,
+    password: userFromDB.password,
+  };
+  registeredUsers[idxInDB] = editedUser;
+
+  localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+
   showDashboard();
   showAmount();
+  document.querySelector("#username").textContent = user.username;
 });
 
 function defSetting() {
@@ -292,11 +304,3 @@ function defSetting() {
   currency.value = user.currency;
 }
 defSetting();
-
-document.addEventListener("DOMContentLoaded", () => {
-    const user = checkAuth();
-    renderTransactions(transactions);
-    showAmount();
-    renderChart();
-    showDashboard()
-});
