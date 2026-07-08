@@ -1,0 +1,9 @@
+https://api.openweathermap.org/data/4.0/onecall/timeline/1h?lat={lat}&lon={lon}&appid={API key}
+api_Key = da2be0a45156c905fc776efea0fec0e6
+
+
+https://dom-project-mocha-nine.vercel.app/Videos/todo-video.mp4
+VM756:2 https://dom-project-mocha-nine.vercel.app/Videos/daily-plan.mp4
+VM756:2 https://dom-project-mocha-nine.vercel.app/Videos/motivate.mp4
+VM756:2 https://dom-project-mocha-nine.vercel.app/Videos/pomo.mp4
+VM756:2 https://dom-project-mocha-nine.vercel.app/Videos/goals.mp4

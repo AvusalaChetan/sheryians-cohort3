@@ -4,8 +4,8 @@ const UserCard = ({user}) => {
     console.log(user)
     return (
             <div className="rounded-md bg-zinc-800 p-4">
-                <article className="w-[190px] rounded-md bg-zinc-950 p-3 text-white shadow-lg">
-                    <div className="h-[150px] w-full overflow-hidden rounded-md">
+                <article className=" rounded-md bg-zinc-950 p-3 text-white shadow-lg">
+                    <div className=" w-full overflow-hidden rounded-md">
                         <img
                         src={user?.image}
                              alt="user"

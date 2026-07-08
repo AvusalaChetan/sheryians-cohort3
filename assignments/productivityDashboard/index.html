@@ -13,17 +13,71 @@
   </head>
 
   <body data-theme="light">
-    <main class="h-screen w-screen bg-gray-100">
-      <header class="border py-2 px-6">
-        <nav class="flex items-center justify-between  ">
-          <h1 class="text-2xl capitalize ">productivity dashboard</h1>
-          <div class="flex gap-2 ">
-            <button class="nav-btn" id="theme"><i class="ri-sun-line"></i></button>
-            <a href="https://github.com/AvusalaChetan" class="nav-btn"><i class="ri-github-fill"></i></a>
+    <div class="c min-h-screen w-screen">
+      <header class="border py-3 px-6 rounded-3xl">
+        <nav class="flex items-center justify-between">
+          <h2 class="text-2xl capitalize">productivity dashboard</h2>
+          <div class="flex gap-2">
+            <button class="nav-btn" id="theme">
+              <i class="ri-sun-line"></i>
+            </button>
+            <a href="https://github.com/AvusalaChetan" class="nav-btn"
+              ><i class="ri-github-fill"></i
+            ></a>
           </div>
         </nav>
       </header>
-    </main>
+
+      <main>
+        <div
+          id="display-panel"
+          class="  glass-panel flex min-h-[360px] flex-col  justify-between md:mx-auto sm:mx-auto gap-8 px-6 py-7 sm:px-8 sm:py-8"
+        >
+          <div id="timeDeatils" class="flex flex-col gap-3">
+            <p id="date" class="text-sm uppercase tracking-[0.32em]"></p>
+            <h1 class="text-4xl font-semibold sm:text-5xl" id="day"></h1>
+            <h3 id="place" class="text-xl capitalize sm:text-2xl">hyderabad</h3>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="glass-chip">
+              <h4
+                class="mt-1 text-4xl font-semibold capitalize sm:text-5xl"
+                id="dec"
+              ></h4>
+            </div>
+            <div class="glass-chip">
+              <p id="temp" class="text-sm"></p>
+              <p id="hum" class="text-sm"></p>
+              <p id="press" class="text-sm"></p>
+            </div>
+          </div>
+        </div>
+    <!-- e.target.innerHTML = `<video src="video/todo-video.mp4" muted loop autoplay ></video>`; -->
+
+        <aside
+          class=" w-full h-40 flex items-center sm:px-4 bg-red-800 md:h-40 md:w-full lg:h-full lg:w-40 lg:flex-col lg:justify-center gap-4"
+        >
+          <div id="imgContainer" class="w-30 h-30 bg-blue-500 rounded-full ">
+            <img src="./imgs/todo.jpg" alt="" loading="lazy"/>
+          </div>
+          <div id="imgContainer" class="w-30 h-30 bg-blue-500 rounded-full">
+            <img src="./imgs/dailyplain.png" alt="" loading="lazy"/>
+          </div>
+          <div  id="imgContainer" class="w-30 h-30 bg-blue-500 rounded-full">
+            <img src="./imgs/motivation.jpg" alt="mot" loading="lazy" />
+          </div>
+          <div id="imgContainer" class="w-30 h-30 bg-blue-500 rounded-full">
+            <img src="./imgs/timer.jpg" alt="timer" loading="lazy"/>
+          </div>
+          <div id="imgContainer" class="w-30 h-30 bg-blue-500 rounded-full ">
+            <img src="./imgs/dailygloes.jpg" alt="goles" loading="lazy" class=""/>
+          </div>
+          <!-- <div id="imgContainer" class="w-30 h-30 bg-blue-500 rounded-full">
+            <img src="./imgs/goles.png" alt="goles" loading="lazy" />
+          </div> -->
+        </aside>
+      </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
