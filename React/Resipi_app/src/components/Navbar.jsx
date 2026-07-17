@@ -6,7 +6,7 @@ const Navbar = () => {
   {/* Left: Logo */}
   <div className="flex items-center gap-2">
     {/* Chef/Recipe Icon */}
-    <span className="text-2xl">🍳</span> 
+    <span className="text-2xl"></span> 
     <h1 className="text-xl font-bold text-orange-500 tracking-tight">
       Recipe<span className="text-gray-800">Hub</span>
     </h1>

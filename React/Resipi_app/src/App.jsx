@@ -5,7 +5,7 @@ import Form from "./components/Form";
 const App = () => {
   return (
     <>
-      <main className="bg-gray-300 h-screen w-screen overflow-x-hidden ">
+      <main className=" bg-gray-300 p-4 h-screen w-screen overflow-x-hidden ">
         <Navbar />
         <main>
           <aside className="w-1/2">

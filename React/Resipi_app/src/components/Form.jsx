@@ -13,7 +13,7 @@ const Form = () => {
   }
 
   return (
-  <div className="bg-white max-w-xl mx-auto my-8 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+  <div className="bg-white max-w-xl mx-auto my-8 p-6 md:p-8 rounded-sm shadow-sm border border-gray-100">
   <h3 className="text-2xl font-bold text-gray-800 mb-1">add recipie </h3>
   <p className="text-sm text-gray-500 mb-6">
     Lorem adipisicing elit. Unde nihil dolorum minima?
