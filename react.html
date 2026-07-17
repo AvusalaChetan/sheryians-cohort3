@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://platform.linkedin.com/badges/js/profile.js"
+      async
+      defer
+      type="text/javascript"
+    ></script>
+    <title>React</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html">Assignments</a>
+      <a href="projects.html">Projects</a>
+      <a href="react.html" class="active">React</a>
+      <a
+        target="_blank"
+        href="https://www.notion.so/Student-Learning-Portal-353aa7c5a79e80f59901ea8bd7aa5912"
+        >notes</a
+      >
+    </nav>
+
+    <div class="page">
+      <div class="hero">
+        <div>
+          <h1 class="uppercase">React Assignments + Projects</h1>
+          <p>Cohort 3.0 — all my React projects</p>
+        </div>
+        <div
+          class="badge-base LI-profile-badge"
+          data-locale="en_US"
+          data-size="large"
+          data-theme="dark"
+          data-type="VERTICAL"
+          data-vanity="avusalachetan"
+          data-version="v1"
+        >
+          <a
+            class="badge-base__link LI-simple-link"
+            href="https://in.linkedin.com/in/avusalachetan?trk=profile-badge"
+          ></a>
+        </div>
+      </div>
+
+      <hr class="divider" />
+      <div class="container"></div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      let reactProjects = [
+        {
+          name: "Assignment 1",
+          topic: "positions: absolute, relative",
+          cards: [
+            {
+              tag: "general",
+              text: "General",
+              status: "Open",
+              path: "React/contextAPI/index.html",
+            },
+          ],
+        },
+      ];
+
+      reactProjects.forEach(({name, topic, cards, dec}) => {
+        const cardsHTML = cards
+          .map(
+            ({tag, text, status, path}) => `
+          <a class="card" href="${path}" target="_blank">
+            <span class="badge ${tag}">${text}</span>
+            <p class="card-title">${name}</p>
+            <p class="topic">${topic}</p>
+            <p class=''> ${dec ?? " "} </p>
+            <p class="card-arrow">${status}</p>
+          </a>
+  `,
+          )
+          .join("");
+        container.innerHTML = "";
+        container.innerHTML += `
+          <section class="section">
+            <div class="cards">
+              ${cardsHTML}
+            </div>
+          </section>
+  `;
+      });
+    </script>
+  </body>
+</html>

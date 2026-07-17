@@ -333,12 +333,15 @@ function goalsList() {
 function completedTask(idx) {
   tasks.splice(idx, 1);
   localStorage.setItem("tasks", JSON.stringify(tasks));
+    toast('completed task succsfully, great progress',true)
+
   taskListUi();
 }
 
 function deleteGoal(idx) {
   goals.splice(idx, 1);
   localStorage.setItem("goals", JSON.stringify(goals));
+  toast('deleted goal succsfully',true)
   goalsListUi();
 }
 
