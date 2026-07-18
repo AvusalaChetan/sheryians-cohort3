@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+:root {
+  --secondaryColor: #C8F400;
+  --navIconsBlack : #0D0D0D;
+  --primarytext:#fff;
+  --secondarytext :#707061;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}

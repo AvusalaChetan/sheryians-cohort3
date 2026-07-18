@@ -20,3 +20,10 @@ npm install tailwindcss @tailwindcss/vite
 
 - import 
 ` @import "tailwindcss"; `
+
+
+## linkdin post 
+
+``` 
+Big thanks to Devendra Dhote |Sheryians Coding School for the crystal-clear breakdown! 
+```
