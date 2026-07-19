@@ -1,7 +1,8 @@
 import { LogOut, Menu, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "react-router";
-import Icon from "./Icon";
+ 
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,14 +12,7 @@ const Navbar = () => {
   return (
     <header className="relative ">
       <div className="relative flex items-center justify-between lg:justify-around w-full py-3 h-15 bg-black/90 px-4 text-white">
-        <div className="flex items-center justify-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--secondaryColor)] text-white">
-            <Icon />
-          </span>
-          <p className="font-semibold tracking-wider text-xl">
-            Sky<span className="text-[var(--secondaryColor)]">Mart</span>
-          </p>
-        </div>
+      <Logo/>
 
         <div className="hidden lg:block">
           <nav className="flex items-center gap-8 font-medium text-gray-400">
