@@ -4,12 +4,14 @@ import Home from "../pages/Home";
 import Login from '../pages/Login';
 import Register from "../pages/Register";
 import Shop from "../pages/Shop";
+import { Navigate } from "react-router";
 
  const AppRouter = () => {
   return (
     <>
       <Routes>
         <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
         </Route>
