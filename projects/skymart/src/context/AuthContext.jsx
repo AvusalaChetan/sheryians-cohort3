@@ -1,23 +1,27 @@
-import {createContext, useState} from "react";
-import {useNavigate} from "react-router";
+import { createContext, useState } from "react";
+import { useNavigate } from "react-router";
 
-export const AuthContext = createContext();
+export const Auth = createContext();
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
   const [loading] = useState(false);
-  const user = JSON.parse(localStorage.getItem("sm_session"));
+
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("sm_session")),
+  );
 
   const navigation = useNavigate();
 
   const logout = () => {
     localStorage.removeItem("sm_session");
+    setUser(null)
     navigation("/login");
   };
 
   return (
-    <AuthContext.Provider value={{user, logout, loading}}>
+    <Auth.Provider value={{ user,setUser, logout, loading }}>
       {!loading && children}
-    </AuthContext.Provider>
+    </Auth.Provider>
   );
 };
 

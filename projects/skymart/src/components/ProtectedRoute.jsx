@@ -1,9 +1,11 @@
-import Navbar from "./Navbar";
+import { useContext } from "react";
 import { Navigate, Outlet } from "react-router";
+import { Auth } from "../context/AuthContext";
+import Navbar from "./Navbar";
+
 
 const ProtectedRoute = () => {
-  let user = JSON.parse(localStorage.getItem('sm_session'))
-
+  const { user } = useContext(Auth);
   return user? <><Navbar/> <Outlet/></>: <Navigate to='/login'/>
 
 }

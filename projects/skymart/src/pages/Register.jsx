@@ -1,20 +1,22 @@
-import {Eye, EyeOff, Lock, Mail, User} from "lucide-react";
-import {NavLink, useNavigate} from "react-router";
-import Logo from "../components/Logo";
-import {useForm} from "react-hook-form";
-import Error from "../components/Error";
-import {useContext, useState} from "react";
-import {MyStore} from "../context/MartContext";
+import { Eye, EyeOff, Lock, Mail, User } from "lucide-react";
+import { NavLink, useNavigate } from "react-router";
+import Logo from "../components/common/Logo";
+import { useForm } from "react-hook-form";
+import Error from "../components/common/Error";
+import { useContext, useState } from "react";
+import { MyStore } from "../context/MartContext";
+import { Auth } from "../context/AuthContext";
 
 const Register = () => {
-  const {users, setUsers} = useContext(MyStore);
+  const { users, setUsers } = useContext(MyStore);
   const [isShowPassword, setIsShowPassword] = useState(false);
+  const { user, setUser, logout, loading } = useContext(Auth);
 
   const {
     register,
     handleSubmit,
     watch,
-    formState: {errors},
+    formState: { errors },
   } = useForm();
 
   const navigate = useNavigate();
@@ -32,11 +34,8 @@ const Register = () => {
     if (score === 3) return "Good";
     return "Strong";
   };
-
   const password = watch("password");
-
   const strength = checkStrength(password || "");
-
   const colors = {
     Weak: "bg-red-500",
     Fair: "bg-orange-400",
@@ -58,13 +57,14 @@ const Register = () => {
     }
     const userExist = users.find((val) => val.email === data.email);
     if (userExist) {
-      alert("user exist");
+      alert("user already exist with that email");
       return;
     }
 
     setUsers([...users, data]);
     localStorage.setItem("sm_users", JSON.stringify([...users, data]));
     localStorage.setItem("sm_session", JSON.stringify(data));
+    setUser(JSON.parse(localStorage.getItem("sm_session")));
     navigate("/home");
   };
 

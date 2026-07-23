@@ -1,15 +1,19 @@
-import {Lock, Mail} from "lucide-react";
-import {useForm} from "react-hook-form";
-import {NavLink, useNavigate} from "react-router";
-import Error from "../components/Error";
-import Logo from "../components/Logo";
+import { Lock, Mail } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { NavLink, useNavigate } from "react-router";
+import Error from "../components/common/Error";
+import Logo from "../components/common/Logo";
+import { useContext } from "react";
+import { Auth } from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { user, setUser, logout, loading } = useContext(Auth);
+
   const {
     register,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
@@ -25,6 +29,7 @@ const Login = () => {
       return;
     }
     localStorage.setItem("sm_session", JSON.stringify(user));
+    setUser(JSON.parse(localStorage.getItem("sm_session")));
     navigate("/home");
   };
 
