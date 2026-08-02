@@ -3,11 +3,13 @@ import {useContext, useState} from "react";
 import {NavLink} from "react-router";
 
 import {Auth} from "../context/AuthContext";
+import {MyStore} from "../context/MartContext";
 import Logo from "./common/Logo";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {user, logout} = useContext(Auth);
+  const {setShowCardItems} = useContext(MyStore);
 
   const linkClass = ({isActive}) =>
     `w-full h-10 px-4  flex items-center  block ${isActive ? "text-(--secondaryColor)" : "hover:text-white transition-colors"}`;
@@ -57,7 +59,7 @@ const Navbar = () => {
           </div>
 
           <div className="border border-white/10 grid items-center justify-center text-white h-8 w-8  rounded-md bg-(--navIconsBlack) cursor-pointer   transition-colors">
-            <button>
+            <button onClick={() => setShowCardItems(true)}>
               <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
           </div>
@@ -77,40 +79,37 @@ const Navbar = () => {
         </div>
       </div>
 
-
       {/* {isMenuOpen && ( */}
-        <>
-          <div
-            className={`bg-black  lg:hidden z-10 overflow-hidden transition-all duration-300 ease-in-out w-full border-t border-gray-600 ${isMenuOpen ? "h-28" : "h-0"}`}
-          >
-            <nav className="text-gray-400 w-full   ">
-              <NavLink
-                to="/home"
-                onClick={() => setIsMenuOpen(false)}
-                className={linkClass}
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/shop"
-                onClick={() => setIsMenuOpen(false)}
-                className={linkClass}
-              >
-                Shop
-              </NavLink>
-              <NavLink
-                to="/about"
-                onClick={() => setIsMenuOpen(false)}
-                className={linkClass}
-              >
-                About
-              </NavLink>
-            </nav>
-          </div>
-        </>
+      <>
+        <div
+          className={`bg-black  lg:hidden z-10 overflow-hidden transition-all duration-300 ease-in-out w-full border-t border-gray-600 ${isMenuOpen ? "h-28" : "h-0"}`}
+        >
+          <nav className="text-gray-400 w-full   ">
+            <NavLink
+              to="/home"
+              onClick={() => setIsMenuOpen(false)}
+              className={linkClass}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/shop"
+              onClick={() => setIsMenuOpen(false)}
+              className={linkClass}
+            >
+              Shop
+            </NavLink>
+            <NavLink
+              to="/about"
+              onClick={() => setIsMenuOpen(false)}
+              className={linkClass}
+            >
+              About
+            </NavLink>
+          </nav>
+        </div>
+      </>
       {/* )} */}
-
-
     </header>
   );
 };

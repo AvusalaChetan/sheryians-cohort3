@@ -1,16 +1,15 @@
 import { Eye, EyeOff, Lock, Mail, User } from "lucide-react";
-import { NavLink, useNavigate } from "react-router";
-import Logo from "../components/common/Logo";
-import { useForm } from "react-hook-form";
-import Error from "../components/common/Error";
 import { useContext, useState } from "react";
-import { MyStore } from "../context/MartContext";
+import { useForm } from "react-hook-form";
+import { NavLink, useNavigate } from "react-router";
+import Error from "../components/common/Error";
+import Logo from "../components/common/Logo";
 import { Auth } from "../context/AuthContext";
 
 const Register = () => {
-  const { users, setUsers } = useContext(MyStore);
+  const { users, setUsers } = useContext(Auth);
   const [isShowPassword, setIsShowPassword] = useState(false);
-  const { user, setUser, logout, loading } = useContext(Auth);
+  const { setUser,} = useContext(Auth);
 
   const {
     register,
@@ -63,6 +62,7 @@ const Register = () => {
 
     setUsers([...users, data]);
     localStorage.setItem("sm_users", JSON.stringify([...users, data]));
+    localStorage.removeItem('sm_session')
     localStorage.setItem("sm_session", JSON.stringify(data));
     setUser(JSON.parse(localStorage.getItem("sm_session")));
     navigate("/home");

@@ -1,12 +1,12 @@
-import { Route, Routes } from "react-router";
-import ProtectedRoute from "../components/ProtectedRoute";
+import {Route, Routes} from "react-router";
+import ProtectedRoute from "./ProtectedRoute";
 import Home from "../pages/Home";
-import Login from '../pages/Login';
+import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Shop from "../pages/Shop";
-import { Navigate } from "react-router";
+import {Navigate} from "react-router";
 
- const AppRouter = () => {
+const AppRouter = () => {
   return (
     <>
       <Routes>

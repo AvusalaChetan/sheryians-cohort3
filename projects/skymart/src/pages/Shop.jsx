@@ -1,40 +1,39 @@
-import axios from "axios";
-import {CarTaxiFront, ChevronDown, Search, X} from "lucide-react";
-import {useContext, useEffect, useRef, useState} from "react";
+import {ChevronDown, PackageX, Search, SearchIcon, X} from "lucide-react";
+import {useContext, useEffect, useState} from "react";
 import Pill from "../components/Pill";
 import ProductCard from "../components/ProductCard";
 import {MyStore} from "../context/MartContext";
+import CartItems from "./CartItems";
 
 const Shop = () => {
-  const {products, setProducts} = useContext(MyStore);
-  const [loading, setLoading] = useState(true);
+  const {
+    products,
+    setProducts,
+    category,
+    setCategory,
+    productsData,
+    
+    loading,
+  } = useContext(MyStore);
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("allCategories");
   const [sortVal, setSortVal] = useState("feat");
-
-  const productsData = useRef([]);
-
-  const getProducts = async () => {
-    let res = await axios.get("https://dummyjson.com/products");
-    setProducts(res.data.products);
-    productsData.current = [...res.data.products];
-    console.log("productsData", productsData);
-    setLoading(false);
-  };
 
   const filteredProducts =
     category === "allCategories"
       ? products
       : products.filter((p) => p.category === category);
 
-  const handileSearch = (e) => {
-    const value = e.target.value;
-    setSearch(value);
+  const handileSearch = () => {
     const searchedItems = productsData.current.filter((p) =>
-      p.title.toLowerCase().includes(value.toLowerCase()),
+      p.title.toLowerCase().includes(search.toLowerCase()),
     );
     setProducts(searchedItems);
   };
+
+  useEffect(() => {
+    let searchedItems = setTimeout(handileSearch, 700);
+    return () => clearTimeout(searchedItems);
+  }, [search]);
 
   const sortProducts = (e) => {
     const value = e.target.value;
@@ -57,10 +56,6 @@ const Shop = () => {
     setProducts(productsData.current);
   };
 
-  useEffect(() => {
-    getProducts();
-  }, []);
-
   return (
     <div className="lg:w-[80%] w-full mx-auto px-4">
       <div className=" mx-auto bg-black py-8">
@@ -71,9 +66,12 @@ const Shop = () => {
           </h3>
           <p className="mt-1 text-sm text-[#8A8375]">
             <span className="font-semibold text-[#C1622D]">
-              {products.length}
+              {filteredProducts.length}
             </span>{" "}
-            products found
+            products found{" "}
+            <span className="text-(--secondaryColor)">
+              {category !== "allCategories" && category}
+            </span>
           </p>
         </div>
 
@@ -85,7 +83,7 @@ const Shop = () => {
                 className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-[#8A8375]"
               />
               <input
-                onChange={handileSearch}
+                onChange={(e) => setSearch(e.target.value)}
                 value={search}
                 type="text"
                 placeholder="Search products…"
@@ -94,7 +92,6 @@ const Shop = () => {
             </div>
 
             <div className="flex gap-2">
-              {/* category */}
               <div className="relative">
                 <select
                   onChange={(e) => setCategory(e.target.value)}
@@ -103,7 +100,7 @@ const Shop = () => {
                 >
                   <option value="allCategories">All categories</option>
                   <option value="beauty">beauty</option>
-                  <option value="fragrance">fragrance</option>
+                  <option value="fragrances">fragrances</option>
                   <option value="furniture">furniture</option>
                   <option value="groceries">groceries</option>
                 </select>
@@ -154,17 +151,29 @@ const Shop = () => {
               {search.trim() && (
                 <Pill
                   value={search}
-                  onClear={() => setSearch("")}
+                  onClear={() => {
+                    setSearch("");
+                    setProducts(productsData.current);
+                  }}
                 />
               )}
               {category !== "allCategories" && (
                 <Pill
                   value={category}
-                  onClear={() => setCategory("allCategories")}
+                  onClear={() => {
+                    setCategory("allCategories");
+                    setProducts(productsData.current);
+                  }}
                 />
               )}
               {sortVal !== "feat" && (
-                <Pill value={sortVal} onClear={() => setSortVal("feat")} />
+                <Pill
+                  value={sortVal}
+                  onClear={() => {
+                    setSortVal("feat");
+                    setProducts(productsData.current);
+                  }}
+                />
               )}
             </div>
           )}
@@ -177,13 +186,32 @@ const Shop = () => {
         ) : (
           <>
             {filteredProducts.length === 0 ? (
-              <div className="no-products">
-                <p>No products found in this category.</p>
+              <div className="flex flex-col items-center justify-center py-16 px-4 backdrop-blur-sm rounded-2xl text-center">
+                <div className="p-4 rounded-full  text-zinc-400 mb-4 border border-zinc-700/50">
+                  <PackageX size={32} />
+                </div>
+                <h3 className="text-lg font-medium text-white">
+                  No products found
+                </h3>
+                <p className="text-zinc-400 text-sm mt-1 max-w-sm">
+                  We couldn't find any products matching your search or filters.
+                  Try clearing them to see all items.
+                </p>
+                <button
+                  onClick={handleClear}
+                  className="mt-6 px-4 py-2 rounded-xl bg-zinc-800 hover:bg-(--secondaryColor) hover:text-black text-white text-sm font-medium transition-colors border border-zinc-700"
+                >
+                  Clear Filters
+                </button>
               </div>
             ) : (
               <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-center gap-4   p-2">
                 {filteredProducts.map((p) => (
-                  <ProductCard key={p.id} product={p} />
+                  <ProductCard
+                    key={p.id}
+                    product={p}
+                
+                  />
                 ))}
               </div>
             )}

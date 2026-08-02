@@ -1,9 +1,12 @@
-import {DollarSign, ShoppingCart, Star} from "lucide-react";
+import {DollarSign, IndianRupee, ShoppingCart, Star} from "lucide-react";
+import {useContext} from "react";
+import {MyStore} from "../context/MartContext";
 
 const ProductCard = ({product}) => {
+  const {handleAddToCart, cartItems} = useContext(MyStore);
+  const isInCart = cartItems.some((item) => item.id === product.id);
   return (
-    <div className="group w-full max-w-sm overflow-hidden rounded-2xl border border-zinc-800 bg-[#121212] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-[#24B47E]/50 hover:shadow-xl">
-      {/* Image Section */}
+    <div className="group w-full max-w-sm overflow-hidden rounded-2xl border border-zinc-800 bg-[#121212] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-(--secondaryColor)/50 hover:shadow-xl">
       <div className="relative bg-zinc-900/60 p-4 ">
         <span className="inline-block rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-zinc-400">
           {product.category}
@@ -17,20 +20,17 @@ const ProductCard = ({product}) => {
         />
       </div>
 
-      {/* Dashed Separator with Notch Effect */}
       <div className="relative flex items-center">
         <div className="absolute -left-2 h-4 w-4 rounded-full bg-[#121212]" />
         <div className="h-px w-full border-t border-dashed border-zinc-800" />
         <div className="absolute -right-2 h-4 w-4 rounded-full bg-[#121212]" />
       </div>
 
-      {/* Content Section */}
       <div className="space-y-4 p-5 sm:p-6">
         <h2 className="line-clamp-2 font-serif text-lg font-bold leading-snug tracking-tight text-[#E2E2E2] sm:text-xl">
           {product.title}
         </h2>
 
-        {/* Rating */}
         <div className="flex items-center gap-1">
           {Array.from({length: 5}).map((_, index) => (
             <Star
@@ -48,14 +48,12 @@ const ProductCard = ({product}) => {
           </span>
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-zinc-800/80" />
 
-        {/* Bottom Row */}
         <div className="flex items-center justify-between pt-1">
           <div className=" w-1/2 flex flex-col items-start justify-around p-1">
             <p className="font-serif text-xl font-bold text-[#F0EFEA] flex items-center sm:text-2xl">
-              <DollarSign className="w-5 h-5 text-[#eefff9]" /> {product.price}
+              <IndianRupee className="w-5 h-5 text-[#eefff9]" /> {product.price}
             </p>
             <p
               className={`mt-1 text-xs font-medium border w-fit px-2 py-1 rounded-2xl
@@ -66,9 +64,13 @@ const ProductCard = ({product}) => {
             </p>
           </div>
 
-          <button className="flex items-center gap-2 rounded-full bg-[#24B47E] px-4 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-[#B8FD34] active:scale-95">
+          <button
+            onClick={() => handleAddToCart(product)}
+            className={`flex items-center gap-2 rounded-full bg-(--secondaryColor) px-4 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-[#B8FD34] active:scale-95 
+              ${isInCart && "bg-green-500"}`}
+          >
             <ShoppingCart size={15} />
-            Add
+            {isInCart ? "Added" : "Add"}
           </button>
         </div>
       </div>
