@@ -5,6 +5,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Shop from "../pages/Shop";
 import {Navigate} from "react-router";
+import ProductCard from "../components/ProductCard";
+import ProductPage from "../pages/ProductPage";
 
 const AppRouter = () => {
   return (
@@ -14,6 +16,7 @@ const AppRouter = () => {
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:id" element={<ProductPage />} />
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

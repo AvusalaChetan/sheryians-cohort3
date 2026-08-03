@@ -1,13 +1,17 @@
 import axios from "axios";
-import {createContext, useEffect, useRef, useState} from "react";
+import {createContext, useCallback, useEffect, useRef, useState} from "react";
+import {useParams} from "react-router";
 
 export const MyStore = createContext();
 export const dummyProducts = "https://dummyjson.com/products";
 
 const ContextProvider = ({children}) => {
+  const {id} = useParams();
   const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [category, setCategory] = useState("allCategories");
   const [loading, setLoading] = useState(true);
+  const [productLoading, setProductLoading] = useState(false)
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("sm_cartItems")) || [],
   );
@@ -36,6 +40,28 @@ const ContextProvider = ({children}) => {
   useEffect(() => {
     getProducts();
   }, []);
+
+  const getProduct = useCallback(
+    async (productId = id) => {
+      if (!productId) {
+        setSelectedProduct(null);
+        setProductLoading(false);
+        return;
+      }
+      try {
+        setSelectedProduct(null);
+        setProductLoading(true);
+        const res = await axios.get(`${dummyProducts}/${productId}`);
+        setSelectedProduct(res.data);
+      } catch (error) {
+        console.error("Failed to fetch product:", error);
+        setSelectedProduct(null);
+      } finally {
+        setProductLoading(false);
+      }
+    },
+    [id],
+  );
 
   const handleAddToCart = (product) => {
     setCartItems((prevItems) => {
@@ -79,7 +105,10 @@ const ContextProvider = ({children}) => {
   const handleDel = (product) => {
     let filteredCardItems = cartItems.filter((c) => c.id !== product.id);
     setCartItems([...filteredCardItems]);
-    localStorage.setItem("sm_cartItems", JSON.stringify([...filteredCardItems]));
+    localStorage.setItem(
+      "sm_cartItems",
+      JSON.stringify([...filteredCardItems]),
+    );
   };
 
   return (
@@ -91,6 +120,7 @@ const ContextProvider = ({children}) => {
         category,
         setCategory,
         loading,
+        productLoading,
         productsData,
         cartItems,
         setCartItems,
@@ -99,6 +129,9 @@ const ContextProvider = ({children}) => {
         handleAddToCart,
         handleDeleteFromCart,
         handleDel,
+        selectedProduct,
+        setSelectedProduct,
+        getProduct,
       }}
     >
       {children}

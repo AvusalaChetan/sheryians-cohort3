@@ -1,12 +1,25 @@
-import {DollarSign, IndianRupee, ShoppingCart, Star} from "lucide-react";
+import {IndianRupee, ShoppingCart, Star} from "lucide-react";
 import {useContext} from "react";
+import {useNavigate} from "react-router";
 import {MyStore} from "../context/MartContext";
 
 const ProductCard = ({product}) => {
+  const navigate = useNavigate();
   const {handleAddToCart, cartItems} = useContext(MyStore);
   const isInCart = cartItems.some((item) => item.id === product.id);
+
+  const handleCardClick = () => {
+    navigate(`/shop/${product.id}`);
+  };
+
   return (
-    <div className="group w-full max-w-sm overflow-hidden rounded-2xl border border-zinc-800 bg-[#121212] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-(--secondaryColor)/50 hover:shadow-xl">
+    <div
+      onClick={handleCardClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && handleCardClick()}
+      className="group w-full max-w-sm overflow-hidden rounded-2xl border border-zinc-800 bg-[#121212] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-(--secondaryColor)/50 hover:shadow-xl"
+    >
       <div className="relative bg-zinc-900/60 p-4 ">
         <span className="inline-block rounded-full border border-zinc-700 bg-zinc-800 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-zinc-400">
           {product.category}
@@ -57,15 +70,20 @@ const ProductCard = ({product}) => {
             </p>
             <p
               className={`mt-1 text-xs font-medium border w-fit px-2 py-1 rounded-2xl
-                ${product.availabilityStatus === "In Stock" && "text-green-600 border-green-500 bg-green-500/15 "}
-                ${product.availabilityStatus === "Low Stock" && "text-yellow-500 bg-yellow-400/20"}`}
+                ${product.availabilityStatus === "In Stock" && "text-green-600 border-green-500 bg-green-500/15"}
+${product.availabilityStatus === "Low Stock" && "text-yellow-500 border-yellow-500 bg-yellow-400/20"}
+${product.availabilityStatus === "Out of Stock" && "text-red-500 border-red-500 bg-red-500/15"}
+                `}
             >
               {product.availabilityStatus}
             </p>
           </div>
 
           <button
-            onClick={() => handleAddToCart(product)}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleAddToCart(product);
+            }}
             className={`flex items-center gap-2 rounded-full bg-(--secondaryColor) px-4 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-[#B8FD34] active:scale-95 
               ${isInCart && "bg-green-500"}`}
           >

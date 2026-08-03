@@ -1,20 +1,13 @@
-import {ChevronDown, PackageX, Search, SearchIcon, X} from "lucide-react";
+import {ChevronDown, PackageX, Search, X} from "lucide-react";
 import {useContext, useEffect, useState} from "react";
 import Pill from "../components/Pill";
 import ProductCard from "../components/ProductCard";
 import {MyStore} from "../context/MartContext";
-import CartItems from "./CartItems";
 
 const Shop = () => {
-  const {
-    products,
-    setProducts,
-    category,
-    setCategory,
-    productsData,
-    
-    loading,
-  } = useContext(MyStore);
+  const {products, setProducts, category, setCategory, productsData, loading} =
+    useContext(MyStore);
+
   const [search, setSearch] = useState("");
   const [sortVal, setSortVal] = useState("feat");
 
@@ -205,13 +198,9 @@ const Shop = () => {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-center gap-4   p-2">
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
                 {filteredProducts.map((p) => (
-                  <ProductCard
-                    key={p.id}
-                    product={p}
-                
-                  />
+                  <ProductCard key={p.id} product={p} />
                 ))}
               </div>
             )}
