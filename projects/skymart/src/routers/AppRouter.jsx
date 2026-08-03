@@ -7,6 +7,7 @@ import Shop from "../pages/Shop";
 import {Navigate} from "react-router";
 import ProductCard from "../components/ProductCard";
 import ProductPage from "../pages/ProductPage";
+import About from "../pages/About";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,8 @@ const AppRouter = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:id" element={<ProductPage />} />
+          <Route path="/about" element={<About />} />
+
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

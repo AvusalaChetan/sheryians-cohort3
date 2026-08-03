@@ -5,17 +5,56 @@ import {
   ShieldEllipsis,
   ShoppingBag,
   Star,
+  Tag,
   TagIcon,
+  TrendingUp,
   Zap,
 } from "lucide-react";
 import {useContext} from "react";
 import {useNavigate} from "react-router";
 import Hero from "../components/Hero";
 import {MyStore} from "../context/MartContext";
-import CartItems from "./CartItems";
 
 const Home = () => {
-  const {categories, setCategory, products, loading} = useContext(MyStore);
+  const {categories, setCategory, products, loading,cartItems} = useContext(MyStore);
+const cartTotal = cartItems.reduce(
+  (total, item) => total + (item.price || 0) * (item.qty || 1),
+  0
+);
+  const stats = [
+    {
+      icon: Package,
+      value: cartItems.length,
+      label: "Cart Items",
+      sub: "In your bag",
+      iconBg: "bg-lime-500/15",
+      iconColor: "text-lime-400",
+    },
+    {
+      icon: TrendingUp ,
+      value: `Rs.${cartTotal}`,
+      label: "Cart Value",
+      sub: "Ready to checkout",
+      iconBg: "bg-blue-500/15",
+      iconColor: "text-blue-400",
+    },
+    {
+      icon: Star,
+      value: "5",
+      label: "Top Products",
+      sub: "Highly rated",
+      iconBg: "bg-amber-500/15",
+      iconColor: "text-amber-400",
+    },
+    {
+      icon: Tag,
+      value: categories.length,
+      label: "Categories",
+      sub: "To explore",
+      iconBg: "bg-purple-500/15",
+      iconColor: "text-purple-400",
+    },
+  ];
 
   const tags = [
     {
@@ -34,6 +73,7 @@ const Home = () => {
       secendryText: "Same-day on select items",
     },
   ];
+
   const navigate = useNavigate();
   console.log(products);
 
@@ -45,8 +85,33 @@ const Home = () => {
   return (
     <div className=" lg:w-[80%] w-full  mx-auto py-8 px-6 flex flex-col gap-5">
       <Hero />
-      
-      <div className="border  h-12 border-white/30">build in future</div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+        {stats.map((s) => {
+          const Icon = s.icon;
+          return (
+            <div
+              key={s.label}
+              className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-5 flex items-center gap-4"
+            >
+              <div
+                className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${s.iconBg}`}
+              >
+                <Icon size={20} className={s.iconColor} />
+              </div>
+
+              <div>
+                <p className="text-2xl font-bold text-white leading-tight">
+                  {s.value}
+                </p>
+                <p className="text-sm text-zinc-300">{s.label}</p>
+                <p className="text-xs text-zinc-500">{s.sub}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
       <div className="border border-zinc-800 rounded-2xl p-4 bg-zinc-900/60 backdrop-blur-sm">
         <div className="flex  justify-between p-4  w-full">
           <h3 className="capitalize font-semibold text-xl ">

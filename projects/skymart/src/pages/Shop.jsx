@@ -3,7 +3,6 @@ import {useContext, useEffect, useState} from "react";
 import Pill from "../components/Pill";
 import ProductCard from "../components/ProductCard";
 import {MyStore} from "../context/MartContext";
-
 const Shop = () => {
   const {products, setProducts, category, setCategory, productsData, loading} =
     useContext(MyStore);
@@ -51,6 +50,7 @@ const Shop = () => {
 
   return (
     <div className="lg:w-[80%] w-full mx-auto px-4">
+ 
       <div className=" mx-auto bg-black py-8">
         {/* Heading */}
         <div className="mb-5">

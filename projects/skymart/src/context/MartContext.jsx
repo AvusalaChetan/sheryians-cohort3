@@ -1,6 +1,7 @@
 import axios from "axios";
 import {createContext, useCallback, useEffect, useRef, useState} from "react";
 import {useParams} from "react-router";
+import {toast} from "react-toastify";
 
 export const MyStore = createContext();
 export const dummyProducts = "https://dummyjson.com/products";
@@ -11,7 +12,7 @@ const ContextProvider = ({children}) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [category, setCategory] = useState("allCategories");
   const [loading, setLoading] = useState(true);
-  const [productLoading, setProductLoading] = useState(false)
+  const [productLoading, setProductLoading] = useState(false);
   const [cartItems, setCartItems] = useState(
     JSON.parse(localStorage.getItem("sm_cartItems")) || [],
   );
@@ -54,7 +55,9 @@ const ContextProvider = ({children}) => {
         const res = await axios.get(`${dummyProducts}/${productId}`);
         setSelectedProduct(res.data);
       } catch (error) {
-        console.error("Failed to fetch product:", error);
+        console.log(error)
+        toast.error(`Failed to fetch product:${error}`);
+
         setSelectedProduct(null);
       } finally {
         setProductLoading(false);
@@ -81,6 +84,7 @@ const ContextProvider = ({children}) => {
       return updatedItems;
     });
 
+    toast.success("Added to cart");
     setShowCardItems(true);
   };
 
@@ -101,7 +105,7 @@ const ContextProvider = ({children}) => {
       return updatedItems;
     });
   };
-
+  
   const handleDel = (product) => {
     let filteredCardItems = cartItems.filter((c) => c.id !== product.id);
     setCartItems([...filteredCardItems]);
@@ -109,6 +113,7 @@ const ContextProvider = ({children}) => {
       "sm_cartItems",
       JSON.stringify([...filteredCardItems]),
     );
+    toast.success("delete from cart");
   };
 
   return (
