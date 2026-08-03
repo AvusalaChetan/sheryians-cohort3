@@ -2,21 +2,25 @@ import {IndianRupeeIcon, Minus, Plus, Trash2, XCircle} from "lucide-react";
 import {nanoid} from "nanoid";
 import {useContext, useEffect, useState} from "react";
 import {MyStore} from "../context/MartContext";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify";
 
 const CartItems = () => {
-  const {cartItems, showCardItems, setShowCardItems,handleAddToCart} = useContext(MyStore);
+  const {cartItems, showCardItems, setShowCardItems, handleAddToCart} =
+    useContext(MyStore);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    const total = cartItems.reduce((acc, val) => (acc + val.price)*val.qty, 0);
+    const total = cartItems.reduce(
+      (acc, val) => (acc + val.price) * val.qty,
+      0,
+    );
     setTotalPrice(total.toFixed(2));
-  }, [cartItems,handleAddToCart]);
+  }, [cartItems, handleAddToCart]);
 
   if (!showCardItems) {
     return null;
   }
-
+  
   return (
     <div
       className="fixed  transition-all inset-0 z-50  bg-black/40"
@@ -54,12 +58,17 @@ const CartItems = () => {
 
           <div className="border-t border-zinc-800 p-4">
             <button
-            onClick={()=>toast.success('thanks for buying from us')}
-            disabled={totalPrice === 0}
+              onClick={() => toast.success("thanks for buying from us")}
+              disabled={parseInt(totalPrice, 10) === 0}
               type="button"
+              style={{
+                cursor:
+                  parseInt(totalPrice, 10) === 0 ? "not-allowed" : "pointer",
+              }}
               className="w-full rounded-xl bg-(--secondaryColor) text-black font-semibold py-3 hover:brightness-95 transition"
             >
-              Buy All - <IndianRupeeIcon className="inline" size={16}/>{totalPrice}
+              Buy All - <IndianRupeeIcon className="inline" size={16} />
+              {totalPrice}
             </button>
           </div>
         </div>
@@ -69,7 +78,8 @@ const CartItems = () => {
 };
 
 const CartItem = ({product}) => {
-  const {handleDeleteFromCart,handleAddToCart,handleDel} = useContext(MyStore);
+  const {handleDeleteFromCart, handleAddToCart, handleDel} =
+    useContext(MyStore);
   return (
     <div className="rounded-2xl font-serif border border-zinc-700 bg-zinc-950/90 p-4 shadow-sm">
       <div className="flex items-start gap-4">
@@ -93,8 +103,9 @@ const CartItem = ({product}) => {
 
           <div className="mt-3 flex items-center gap-3">
             <button
-            onClick={()=>handleDeleteFromCart(product)}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-700 text-zinc-200 hover:bg-zinc-800">
+              onClick={() => handleDeleteFromCart(product)}
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-700 text-zinc-200 hover:bg-zinc-800"
+            >
               <Minus size={15} />
             </button>
 
@@ -102,9 +113,10 @@ const CartItem = ({product}) => {
               {product.qty || 1}
             </span>
 
-            <button 
-            onClick={()=>handleAddToCart(product)}
-            className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-700 text-zinc-200 hover:bg-zinc-800">
+            <button
+              onClick={() => handleAddToCart(product)}
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-700 text-zinc-200 hover:bg-zinc-800"
+            >
               <Plus size={15} />
             </button>
 
