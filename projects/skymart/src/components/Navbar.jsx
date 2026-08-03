@@ -9,7 +9,7 @@ import Logo from "./common/Logo";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const {user, logout} = useContext(Auth);
-  const {setShowCardItems} = useContext(MyStore);
+  const {setShowCardItems, cartItems} = useContext(MyStore);
 
   const linkClass = ({isActive}) =>
     `w-full h-10 px-4  flex items-center  block ${isActive ? "text-(--secondaryColor)" : "hover:text-white transition-colors"}`;
@@ -58,7 +58,10 @@ const Navbar = () => {
             </span>
           </div>
 
-          <div className="border border-white/10 grid items-center justify-center text-white h-8 w-8  rounded-md bg-(--navIconsBlack) cursor-pointer   transition-colors">
+          <div className="border relative border-white/10 grid items-center justify-center text-white h-8 w-8  rounded-md bg-(--navIconsBlack) cursor-pointer   transition-colors">
+            <span className="absolute text-xs -right-2 -top-2 bg-red-500 px-1   rounded-2xl font-bold ">
+              {cartItems.length}
+            </span>
             <button onClick={() => setShowCardItems(true)}>
               <ShoppingCart className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>

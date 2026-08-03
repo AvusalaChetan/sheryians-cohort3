@@ -2,6 +2,7 @@ import {IndianRupeeIcon, Minus, Plus, Trash2, XCircle} from "lucide-react";
 import {nanoid} from "nanoid";
 import {useContext, useEffect, useState} from "react";
 import {MyStore} from "../context/MartContext";
+import { toast } from "react-toastify";
 
 const CartItems = () => {
   const {cartItems, showCardItems, setShowCardItems,handleAddToCart} = useContext(MyStore);
@@ -53,6 +54,8 @@ const CartItems = () => {
 
           <div className="border-t border-zinc-800 p-4">
             <button
+            onClick={()=>toast.success('thanks for buying from us')}
+
               type="button"
               className="w-full rounded-xl bg-(--secondaryColor) text-black font-semibold py-3 hover:brightness-95 transition"
             >

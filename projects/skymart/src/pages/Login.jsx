@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router";
 import Error from "../components/common/Error";
 import Logo from "../components/common/Logo";
 import { Auth } from "../context/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,6 +31,8 @@ const Login = () => {
     }
     localStorage.setItem("sm_session", JSON.stringify(user));
     setUser(JSON.parse(localStorage.getItem("sm_session")));
+        toast.success('login successfully!')
+    
     navigate("/home");
   };
 

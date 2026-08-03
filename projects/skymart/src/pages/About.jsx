@@ -116,7 +116,7 @@ const About = () => {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-[24px] border border-zinc-800 bg-zinc-900/70 p-5 text-center"
+                className="rounded-[24px] flex flex-col items-center justify-center border border-zinc-800 bg-zinc-900/70 p-5 text-center"
               >
                 <p className="text-3xl font-bold text-lime-300">{stat.value}</p>
                 <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>

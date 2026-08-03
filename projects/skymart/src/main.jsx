@@ -13,15 +13,16 @@ createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <App />
         <ToastContainer
-          position="bottom-right"
-          autoClose={3000}
-          hideProgressBar={false}
+          position="top-right"
+          autoClose={1500}
+          hideProgressBar={true}
           newestOnTop
           closeOnClick
-          pauseOnFocusLoss
           draggable
           pauseOnHover
           theme="dark"
+          
+          style={{width: "400px", height:'10px'}}
         />
       </AuthProvider>
     </ContextProvider>

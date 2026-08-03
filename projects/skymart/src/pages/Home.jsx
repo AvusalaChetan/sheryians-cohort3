@@ -86,13 +86,13 @@ const cartTotal = cartItems.reduce(
     <div className=" lg:w-[80%] w-full  mx-auto py-8 px-6 flex flex-col gap-5">
       <Hero />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
+      <div className="flex items-center justify-around gap-4 p-4 w-full ">
         {stats.map((s) => {
           const Icon = s.icon;
           return (
             <div
               key={s.label}
-              className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-5 flex items-center gap-4"
+              className="w-full rounded-2xl border border-zinc-800 bg-zinc-950/60 p-5 flex items-center gap-4"
             >
               <div
                 className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${s.iconBg}`}

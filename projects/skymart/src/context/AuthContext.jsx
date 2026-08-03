@@ -1,5 +1,6 @@
 import {createContext, useState} from "react";
 import {useNavigate} from "react-router";
+import { toast } from "react-toastify";
 
 export const Auth = createContext();
 
@@ -18,6 +19,7 @@ const AuthProvider = ({children}) => {
     localStorage.removeItem("sm_session");
     setUser(null);
     navigation("/login");
+    toast.success("See you next time! You've been logged out.")
   };
 
   return (

@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router";
 import Error from "../components/common/Error";
 import Logo from "../components/common/Logo";
 import { Auth } from "../context/AuthContext";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { users, setUsers } = useContext(Auth);
@@ -51,12 +52,12 @@ const Register = () => {
 
   const onSubmit = (data) => {
     if (data.password !== data.conformPassword) {
-      alert("password and conformPassword are nto same ");
+      toast.error("password and conformPassword are not same ");
       return;
     }
     const userExist = users.find((val) => val.email === data.email);
     if (userExist) {
-      alert("user already exist with that email");
+      toast.warn("user already exist with that email");
       return;
     }
 
@@ -66,6 +67,7 @@ const Register = () => {
     localStorage.setItem("sm_session", JSON.stringify(data));
     setUser(JSON.parse(localStorage.getItem("sm_session")));
     navigate("/home");
+    toast.success('registered successfully!')
   };
 
   return (
