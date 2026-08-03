@@ -55,7 +55,7 @@ const CartItems = () => {
           <div className="border-t border-zinc-800 p-4">
             <button
             onClick={()=>toast.success('thanks for buying from us')}
-
+            disabled={totalPrice === 0}
               type="button"
               className="w-full rounded-xl bg-(--secondaryColor) text-black font-semibold py-3 hover:brightness-95 transition"
             >
