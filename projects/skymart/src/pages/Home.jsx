@@ -16,11 +16,12 @@ import Hero from "../components/Hero";
 import {MyStore} from "../context/MartContext";
 
 const Home = () => {
-  const {categories, setCategory, products, loading,cartItems} = useContext(MyStore);
-const cartTotal = cartItems.reduce(
-  (total, item) => total + (item.price || 0) * (item.qty || 1),
-  0
-);
+  const {categories, setCategory, products, loading, cartItems} =
+    useContext(MyStore);
+  const cartTotal = cartItems.reduce(
+    (total, item) => total + (item.price || 0) * (item.qty || 1),
+    0,
+  );
   const stats = [
     {
       icon: Package,
@@ -31,7 +32,7 @@ const cartTotal = cartItems.reduce(
       iconColor: "text-lime-400",
     },
     {
-      icon: TrendingUp ,
+      icon: TrendingUp,
       value: `Rs.${cartTotal}`,
       label: "Cart Value",
       sub: "Ready to checkout",
@@ -75,8 +76,7 @@ const cartTotal = cartItems.reduce(
   ];
 
   const navigate = useNavigate();
-  console.log(products);
-
+ 
   const selectCategory = (c) => {
     setCategory(c);
     navigate("/shop");
@@ -86,7 +86,7 @@ const cartTotal = cartItems.reduce(
     <div className=" lg:w-[80%] w-full  mx-auto py-8 px-6 flex flex-col gap-5">
       <Hero />
 
-      <div className="flex items-center justify-around gap-4 p-4 w-full ">
+      <div className="flex flex-wrap lg:flex-nowrap items-center justify-around gap-4 p-4 w-full">
         {stats.map((s) => {
           const Icon = s.icon;
           return (

@@ -3,10 +3,13 @@ import {createContext, useCallback, useEffect, useRef, useState} from "react";
 import {useParams} from "react-router";
 import {toast} from "react-toastify";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const MyStore = createContext();
 export const dummyProducts = "https://dummyjson.com/products";
 
 const ContextProvider = ({children}) => {
+  const user = JSON.parse(localStorage.getItem("sm_session"));
+  console.log(user);
   const {id} = useParams();
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -55,7 +58,7 @@ const ContextProvider = ({children}) => {
         const res = await axios.get(`${dummyProducts}/${productId}`);
         setSelectedProduct(res.data);
       } catch (error) {
-        console.log(error)
+        console.log(error);
         toast.error(`Failed to fetch product:${error}`);
 
         setSelectedProduct(null);
@@ -80,7 +83,10 @@ const ContextProvider = ({children}) => {
         updatedItems = [...prevItems, {...product, qty: 1}];
       }
 
-      localStorage.setItem("sm_cartItems", JSON.stringify(updatedItems));
+      localStorage.setItem(
+        `sm_cartItems_${user.name}`,
+        JSON.stringify(updatedItems),
+      );
       return updatedItems;
     });
 
@@ -101,16 +107,19 @@ const ContextProvider = ({children}) => {
             )
           : prevItems.filter((item) => item.id !== product.id);
 
-      localStorage.setItem("sm_cartItems", JSON.stringify(updatedItems));
+      localStorage.setItem(
+        `sm_cartItems_${user.name}`,
+        JSON.stringify(updatedItems),
+      );
       return updatedItems;
     });
   };
-  
+
   const handleDel = (product) => {
     let filteredCardItems = cartItems.filter((c) => c.id !== product.id);
     setCartItems([...filteredCardItems]);
     localStorage.setItem(
-      "sm_cartItems",
+     `sm_cartItems_${user.name}`,
       JSON.stringify([...filteredCardItems]),
     );
     toast.success("delete from cart");

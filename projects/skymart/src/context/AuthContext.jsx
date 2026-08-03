@@ -2,6 +2,7 @@ import {createContext, useState} from "react";
 import {useNavigate} from "react-router";
 import { toast } from "react-toastify";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const Auth = createContext();
 
 const AuthProvider = ({children}) => {

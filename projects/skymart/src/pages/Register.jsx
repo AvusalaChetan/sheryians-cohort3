@@ -87,7 +87,7 @@ const Register = () => {
         <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div className="w-full">
             <div className="flex items-center gap-3 border border-neutral-700 bg-neutral-950 rounded-lg px-4 py-3 focus-within:border-lime-400 transition-colors">
-              <User className="text-neutral-400 w-5 h-5 flex-shrink-0" />
+              <User className="text-neutral-400 w-5 h-5 shrink-0" />
               <input
                 type="text"
                 placeholder="Full name"
@@ -107,7 +107,7 @@ const Register = () => {
 
           <div className="w-full">
             <div className="flex items-center gap-3 border border-neutral-700 bg-neutral-950 rounded-lg px-4 py-3 focus-within:border-lime-400 transition-colors">
-              <Mail className="text-neutral-400 w-5 h-5 flex-shrink-0" />
+              <Mail className="text-neutral-400 w-5 h-5 shrink-0" />
               <input
                 type="email"
                 placeholder="Email address"
@@ -123,7 +123,7 @@ const Register = () => {
 
           <div className="w-full">
             <div className="flex items-center gap-3 border border-neutral-700 bg-neutral-950 rounded-lg px-4 py-3 focus-within:border-lime-400 transition-colors">
-              <Lock className="text-neutral-400 w-5 h-5 flex-shrink-0" />
+              <Lock className="text-neutral-400 w-5 h-5 shrink-0" />
               <input
                 type={isShowPassword ? "text" : "password"}
                 autoComplete="new-password"
@@ -166,7 +166,7 @@ const Register = () => {
 
           <div className="w-full">
             <div className="flex items-center gap-3 border border-neutral-700 bg-neutral-950 rounded-lg px-4 py-3 focus-within:border-lime-400 transition-colors">
-              <Lock className="text-neutral-400 w-5 h-5 flex-shrink-0" />
+              <Lock className="text-neutral-400 w-5 h-5 shrink-0" />
               <input
                 type="password"
                 autoComplete="new-password"

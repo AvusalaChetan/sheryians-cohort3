@@ -39,7 +39,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-10 lg:px-8">
-        <section className="overflow-hidden rounded-[28px] border border-zinc-800 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black p-8 shadow-2xl shadow-black/40 lg:p-12">
+        <section className="overflow-hidden rounded-[28px] border border-zinc-800 bg-linear-to-br from-zinc-900 via-zinc-950 to-black p-8 shadow-2xl shadow-black/40 lg:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="max-w-2xl">
               <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-lime-500/30 bg-lime-500/10 px-3 py-1 text-sm font-medium text-lime-300">
@@ -92,7 +92,7 @@ const About = () => {
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[24px] border border-zinc-800 bg-zinc-950/80 p-6">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-950/80 p-6">
             <div className="mb-5 flex items-center gap-3">
               <div className="rounded-2xl bg-blue-500/15 p-3 text-blue-400">
                 <Users size={20} />
@@ -116,7 +116,7 @@ const About = () => {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-[24px] flex flex-col items-center justify-center border border-zinc-800 bg-zinc-900/70 p-5 text-center"
+                className="rounded-3xl flex flex-col items-center justify-center border border-zinc-800 bg-zinc-900/70 p-5 text-center"
               >
                 <p className="text-3xl font-bold text-lime-300">{stat.value}</p>
                 <p className="mt-2 text-sm text-zinc-400">{stat.label}</p>
@@ -125,7 +125,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="rounded-[24px] border border-zinc-800 bg-zinc-950/70 p-6 lg:p-8">
+        <section className="rounded-3xl border border-zinc-800 bg-zinc-950/70 p-6 lg:p-8">
           <div className="mb-6 flex items-center justify-between">
             <div>
               <p className="text-sm uppercase tracking-[0.25em] text-zinc-500">
